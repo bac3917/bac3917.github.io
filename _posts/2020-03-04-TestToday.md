@@ -1,7 +1,7 @@
 ---
 layout: post
-title: WHy jazzzViz?
+title: Why jazzzViz?
 ---
 
 
-Thousands is an apt term...
+Thousands is an apt term... 
