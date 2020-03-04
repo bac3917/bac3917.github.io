@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Why jazzzViz?
+big: /img/
 ---
 
 Thousands is an apt term for American jazz if you're thinking about representing it with data. 
