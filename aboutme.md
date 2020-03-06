@@ -34,8 +34,6 @@ I am a long time jazz fan, sketcher and by day, social scientist.  Actually, I'm
       <ul style="margin-left: 40px;">
       </ul>
       <ul>
-        <li><a target="_parent" href="https://bac3917.github.io/jazzViz/index.html">JazzViz!</a></li>
-        <li><a target="_parent" href="https://bac3917.github.io/jazzTitles.html">JazzViz! Basic Plot</a></li>
         <li><a target="_parent" href="https://github.com/bac3917">Github</a></li>
         <li><a target="_blank" href="https://rpubs.com/bac3917"><span style="color: #0000ee;">Rpubs</span></a></li>
       </ul>
