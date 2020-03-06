@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Why jazzzViz?
+title: Why JazzViz?
 bigimg: /img/bluenotecliques.png
 ---
 
