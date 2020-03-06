@@ -9,10 +9,6 @@ I am a long time jazz fan, sketcher and by day, social scientist.  Actually, he'
 
 <html>
     <meta content="bac" name="author">
-    <br>
-      src="https://bac3917.github.io/resources/webPageImage1.png"><br>
-    <div style="margin-left: 40px;"><strong><br>
-        Benjamin Cohen, Ph.D.<br>
       </strong> <em>PORTFOLIO OF SORTS</em>!<strong><br>
       </strong><strong></strong></div>
     <strong><br>
