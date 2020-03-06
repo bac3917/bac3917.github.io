@@ -9,11 +9,9 @@ I am a long time jazz fan, sketcher and by day, social scientist.  Actually, he'
 
 <html>
     <meta content="bac" name="author">
-      </strong> <em>PORTFOLIO OF SORTS</em>!<strong><br>
-      </strong><strong></strong></div>
-    <strong><br>
-    </strong>
-    <div style="margin-left: 40px;"><strong><u>Research </u></strong><strong></strong></div>
+      <strong> <em>PORTFOLIO OF SORTS</em>!</strong><br>
+
+<div style="margin-left: 40px;"><strong><u>Research </u></strong><strong></strong></div>
     <ul style="margin-left: 40px;">
       <li><a target="_parent" href="http://www.tandfonline.com/doi/abs/10.1080/00220671.2016.1253537">Teaching
           STEM after school: Correlates of instructional comfort</a></li>
