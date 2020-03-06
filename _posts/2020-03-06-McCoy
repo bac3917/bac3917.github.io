@@ -1,0 +1,12 @@
+---
+layout: post
+title: Remembering McCoy Tyner
+---
+
+One way to remember this great jazz pianist is to look at all the musicians who played on the [many albums]<https://www.discogs.com/artist/10620-McCoy-Tyner> he created.
+
+Wait about 30 seconds for the network plot to load, then explore the relationships Tyner made as performers on so many of his albums.
+
+The network map is created by associating any musician on one of Tyner’s albums with any other musician that contributed to that album.
+
+Visualization made [with iGraph]<https://igraph.org/r/>.
