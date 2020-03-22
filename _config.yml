@@ -65,18 +65,18 @@ author:
 social-network-links:
   rss: true
   twitter: bac3917
+  instagram: sketching.sketcher
 #  reddit: yourname
 #  linkedin: daattali
 #  xing: yourname
 #  stackoverflow: "3943160/daattali"
-#  snapchat: deanat78
-#  instagram: deanat78
 
 
 # Select which share links to show in posts
 share-links-active:
   twitter: true
   linkedin: true
+  instagram: true
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
