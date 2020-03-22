@@ -4,7 +4,7 @@
 title: 
 
 # Short description of your site
-description: analytics and art swirled about
+description: analytics, dataviz and jazz swirled about, jazzviz
 
 # --- Local development options ---
 # If your website is hosted locally rather than on GitHub, then you need to uncomment the next two parameters to set the url and baseurl
@@ -80,7 +80,7 @@ share-links-active:
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "bac3917@github.io"  # eg. "deanattali.com/beautiful-jekyll"
+url-pretty: "bac3917.github.io"  # eg. "deanattali.com/beautiful-jekyll"
 
 # --- Web Statistics Section --- #
 
@@ -105,7 +105,7 @@ url-pretty: "bac3917@github.io"  # eg. "deanattali.com/beautiful-jekyll"
 # --- Comments --- #
 
 # Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
-# disqus: ""
+disqus: "Ben C"
 
 # If you want to use JustComments fill with the API Key
 #just-comments: "ABCD-EFGH-IJKL"
