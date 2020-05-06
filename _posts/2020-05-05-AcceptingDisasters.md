@@ -11,7 +11,8 @@ Unfortunately, certain political leaders' rhetoric seems more virulent than COVI
 
 The ignorance is striking, although hardly surprising. The Trump administration's environmental policies, or its dismantling of them, are another tell-tale sign of how it would handle the pandemic. Just like tornadoes could be ignored, or hurricanes sharpied away, another force of nature was given the anti-science one-two. Other earlier denials were evident in the demise of so many environmental protections: rejection of the Paris accord, termination of protected lands, increased logging on public lands, rolled-back coal pollution regulations, etc. [^3]  
 
-> We have it totally under control. It’s one person coming in from China, and we have it under control. It’s going to be just fine. 
+> We have it totally under control. It’s one person coming in from China, and we have it under control. It’s going to be just fine. [^4]
+
 > Looks like by April, you know, in theory, when it gets a little warmer, it miraculously goes away. I hope that’s true. But we’re doing great in our country. [^4]
 
 Trump's quotes about COVID parallel the kind of thinking that leads some to rebuild in the paths of hurricanes or the flood plains of might rivers.
@@ -23,3 +24,4 @@ And so Trump's political impetus waddles on with nary a concern about contending
 [^2]: Wallace, D. (2019). Disaster upon disaster. New York. June 21. https://nymag.com/intelligencer/2019/06/multiple-climate-driven-disasters-in-the-midwest-and-globally.html
 [^3]: A Running List of How President Trump is Changing Environmental Policy. https://www.nationalgeographic.com/news/2017/03/how-trump-is-changing-science-environment/#close
 [^4]: Keith, T. (2020). What Trump Has Said and Done About the Coronavirus. April 21. NPR.  https://www.npr.org/2020/04/21/837348551/timeline-what-trump-has-said-and-done-about-the-coronavirus
+ 
