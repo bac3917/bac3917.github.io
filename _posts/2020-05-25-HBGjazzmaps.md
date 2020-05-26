@@ -4,7 +4,7 @@ title: Jazz in Town
 bigimg:
 ---
 
-Being a long time jazz head, and a social scientist with a strong inclination for making pictures, I'm not surprised I designed a map of jazz clubs in Harrisburg, PA. Making few queries on local Facebook groups, and pursuing some conversations with our regional jazz society, turned up a good bit of information on where these clubs were, and who headlined at them.
+Being a long time jazzhead, and a social scientist with a strong inclination for the visual, I'm not surprised I designed a map of jazz clubs in Harrisburg, PA. Making few queries on local Facebook groups, and pursuing some conversations with our regional jazz society, turned up a good bit of information on where these clubs were, and who headlined at them.
 
 The history of jazz in Harrisburg is pretty rich for a small, central Pennsylvania city. Although that's a 21st century bias. Seventy-five years ago jazz was more popular, and Harrisburg was more vibrant (it's slowly regaining steam today).
 
