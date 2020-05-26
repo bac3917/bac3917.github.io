@@ -14,3 +14,4 @@ Many jazz musicians suffered racist policies when jazz was king. When Cab Callow
   <iframe width="760" height="515" src="https://rpubs.com/bac3917/557025" frameborder="0" allowfullscreen></iframe>
 </div>
  
+At least twenty different jazz venues lined Harrisburg's streets across the decades.
