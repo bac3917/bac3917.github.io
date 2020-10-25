@@ -45,7 +45,7 @@ I am a long time jazz fan, sketcher and by day, social scientist.  Actually, I'm
       <ul>
         <li><a href="https://photos.app.goo.gl/97e1xmQwnKY2oo1k6"><span style="color: #0000ee;">Furniture</span></a></li>
         <li><a href="https://www.flickr.com/photos/79749745@N06">A sampling of sketches and photos...</a></li>
-      <li><a href="http://www.brianzeiders.com"> With Brian Zeiders <a target="_parent" href="http://www.brianzeiders.com/">I am a co-founder</a> of <a target="_parent" href="https://www.facebook.com/harrisburgsketchers/">Harrisburg Sketchers</a></li>  
+      <li><a href="http://www.brianzeiders.com" target="_blank"> With Brian Zeiders </a>I am a co-founder of <a href="https://www.facebook.com/harrisburgsketchers/"  target="_blank">Harrisburg Sketchers</a></li>  
       </ul>
       <br>
       <strong><u>Affiliations</u></strong><br>
@@ -82,5 +82,6 @@ I am a long time jazz fan, sketcher and by day, social scientist.  Actually, I'm
     </ul>
     <div style="margin-left: 40px;"><u><strong>Contact</strong></u>: </div>
     <li style="margin-left: 80px;"><a href="mailto:bac3917@gmail.com">bac3917@gmail.com</a></li>
+    
   </body>
 </html>
