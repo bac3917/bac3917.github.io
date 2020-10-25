@@ -1,0 +1,17 @@
+
+
+---
+layout: post
+title: Using Flourish
+bigimg: 
+---
+
+So many visualization platforms are available these days, and to my cap I place yet another feather: Flourish. 
+
+For starters, at least.
+
+Here is an example, easily created from a free account:
+
+<div class="flourish-embed flourish-chart" data-src="visualisation/4129670"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+
+As a fan of R, I am a little leery about creating graphics without having a piece of code that generates (and documents) my work. We'll see how this goes.
