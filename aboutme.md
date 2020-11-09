@@ -4,8 +4,7 @@ title: About me
 
 ---
 
-I am a long time jazz fan, sketcher and by day, social scientist.  Actually, I'm a probably social scientist more often than that, always analyzing things!
-
+I am a long time jazz fan, sketcher, and by day, social scientist.  
 
 <html>
     <meta content="bac" name="author">
@@ -22,14 +21,7 @@ I am a long time jazz fan, sketcher and by day, social scientist.  Actually, I'm
             Schools as Seen in Three Novels<br>
           </span></a></li>
     </ul>
-    <div style="margin-left: 40px;"><strong><strong><u>Writing</u></strong></strong><strong><strong></strong></strong></div>
-    <ul style="margin-left: 40px;">
-      <li><a target="_blank" href="https://theburgnews.com/sports-health/guided-by-breath-meditation-and-mindfulness-in-harrisburg">Guided
-          by Breath: Meditation and Mindfulness in Harrisburg</a></li>
-      <li><a target="Triangle" href="https://services.library.drexel.edu/static_files/triangle/Drexel-Triangle_1989-02-10.pdf#page=3">Drexel
-          Triangle (see p.3)</a> </li>
-    </ul>
-    <div style="margin-left: 40px;"><strong></strong><strong><u><br>
+      <div style="margin-left: 40px;"><strong></strong><strong><u><br>
           Quantitative Analysis</u></strong><strong></strong>
       <ul style="margin-left: 40px;">
       </ul>
@@ -52,20 +44,11 @@ I am a long time jazz fan, sketcher and by day, social scientist.  Actually, I'm
       <strong></strong></div>
     <ul style="margin-left: 40px;">
       <li><a target="_parent" href="http://eers.org/board-of-directors/">Eastern Evaluation Research Society</a></li>
-      <li><a target="_parent" href="https://bac3917.github.io/hbgsketchers/index.html"><span style="color: #0000ee;">Harrisburg Sketchers web page</span></a></li>
-      <li><a target="burg" href="https://theburgnews.com/tag/harrisburg-sketchers"><span style="color: #0000ee;">Harrisburg Sketchers feature article in
-            TheBurg</span></a></li>
-      <li><a target="_parent" href="www.urbansketchers.org"><span style="color: #0000ee;">Urban
-            Sketchers</span></a></li>
+      <li><a target="_parent" href="https://bac3917.github.io/hbgsketchers/index.html"><span style="color: #0000ee;">Harrisburg Sketchers</span></a></li>
+      <li><a target="_parent" href="www.urbansketchers.org"><span style="color: #0000ee;">Urban Sketchers</span></a></li>
     </ul>
-    <div style="margin-left: 40px;"><br>
-      <strong></strong><strong><u>Blogging About Cycling</u></strong><br>
-      <strong> </strong> </div>
-    <ul style="margin-left: 40px;">
-      <li><a target="_parent" href="http://commuting253.blogspot.com">Commuting253
-          -Commuting Around Harrisburg</a></li>
-    </ul>
-    <div style="margin-left: 40px;"> <strong></strong><strong><u>Travels</u></strong><strong></strong>
+
+<div style="margin-left: 40px;"> <strong></strong><strong><u>Travels</u></strong><strong></strong>
       <ul style="margin-left: 40px;">
         <li>Europe</li>
         <li>Central America</li>
