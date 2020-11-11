@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: Basic COVID Plots - Method
