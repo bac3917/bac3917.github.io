@@ -29,7 +29,7 @@ Multiple R-squared:  0.206,	Adjusted R-squared:  0.1957
 F-statistic: 19.98 on 1 and 77 DF,  p-value: 2.655e-05
 
 
-Why might public schools be at a disadvantage at keeping COVID rates lower?
+So, with all that, why might public schools be at a disadvantage at keeping COVID rates lower? Or, if we add more states to these data, perhaps this pattern does not hold up.  I don't know if I'll ever get back to these questions, but <a href="https://nces.ed.gov/ipeds/" target="_blank" >IPEDS data</a> have plenty of variables for additional exploratory analysis if time warrants.
 
 ```
 library(RCurl); library(dplyr);library(ggplot2);library(stringr)
