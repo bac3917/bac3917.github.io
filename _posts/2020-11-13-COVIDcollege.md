@@ -4,12 +4,18 @@ title: COVID and College in the Commonwealth
 bigimg:
 ---
 
+There is a wide range of enrollments and COVID cases in Pennsylvania higher ed.  First, let's look at the count of COVID cases. The plot below shows the institutions with the lowest and highest number of cases.
+
+![COVIDbar](/img/p1.jpg){: .center-block :}      
+
+Of course, we need to think of the rates of COVID per enrollment, and that's what the scatterplot does for us. Take a look:
 
 ![COVIDscatterplot](/img/covidcollege1.jpg){: .center-block :}      
 
+Why might public schools be at a disadvantage at keeping COVID rates lower?
 
 ```
-library(RCurl)
+library(RCurl); library(dplyr);library(ggplot2);library(stringr)
 
 x<-getURL("https://raw.githubusercontent.com/bac3917/Cauldron/master/covidIHE.csv")
 x<-read.csv(text=x)
