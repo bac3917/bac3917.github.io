@@ -12,6 +12,11 @@ Of course, we need to think of the rates of COVID per enrollment, and that's wha
 
 ![COVIDscatterplot](/img/covidcollege1.jpg){: .center-block :}      
 
+Then we've got some outliers to consider.  Removing the highest enrollment and highest COVID case records we get a plot that's dialed-in a little more:
+
+![COVIDscatterplot](/img/covidcollegeRemoveOutliers.jpg){: .center-block :}      
+
+
 Why might public schools be at a disadvantage at keeping COVID rates lower?
 
 ```
