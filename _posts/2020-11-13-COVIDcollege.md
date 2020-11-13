@@ -16,6 +16,8 @@ Then we've got some outliers to consider.  Removing the highest enrollment and h
 
 ![COVIDscatterplot](/img/covidcollegeRemoveOutliers.jpg){: .center-block :}      
 
+\ 
+
 Using this trimmed file (n=79), let's use a basic regression to see if the relationship is statistically significant:
 
 
@@ -24,9 +26,8 @@ Using this trimmed file (n=79), let's use a basic regression to see if the relat
 | Intercept | 9.819 | 10.147 | 0.968 | 0.336      |
 | EFYTOTLT  | 0.008 | 0.008  | 4.470 | .00002     |
 
-Residual standard error: 64.11 on 77 degrees of freedom
 Multiple R-squared:  0.206,	Adjusted R-squared:  0.1957 
-F-statistic: 19.98 on 1 and 77 DF,  p-value: 2.655e-05
+F-statistic: 19.98 on 1 and 77 DF
 
 
 So, with all that, why might public schools be at a disadvantage at keeping COVID rates lower? Or, if we add more states to these data, perhaps this pattern does not hold up.  I don't know if I'll ever get back to these questions, but <a href="https://nces.ed.gov/ipeds/" target="_blank" >IPEDS data</a> have plenty of variables for additional exploratory analysis if time warrants.
