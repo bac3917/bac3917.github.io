@@ -16,14 +16,13 @@ Then we've got some outliers to consider.  Removing the highest enrollment and h
 
 ![COVIDscatterplot](/img/covidcollegeRemoveOutliers.jpg){: .center-block :}      
 
-Using this trimmed file (n=79), a basic regression:
+Using this trimmed file (n=79), let's use a basic regression to see if the relationship is statistically significant:
 
-Coefficients:
-             Estimate Std. Error t value Pr(>|t|)    
-(Intercept)  9.819103  10.147553   0.968    0.336    
-EFYTOTLT     0.008003   0.001790   4.470 2.66e-05 ***
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+| Variable  | Est.  | SE     | t     | Pr(>\|t\|) |
+|-----------|-------|--------|-------|------------|
+| Intercept | 9.819 | 10.147 | 0.968 | 0.336      |
+| EFYTOTLT  | 0.008 | 0.008  | 4.470 | .00002     |
 
 Residual standard error: 64.11 on 77 degrees of freedom
 Multiple R-squared:  0.206,	Adjusted R-squared:  0.1957 
