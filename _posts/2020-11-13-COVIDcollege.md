@@ -18,22 +18,16 @@ Then we've got some outliers to consider.  Removing the highest enrollment and h
 
 Using this trimmed file (n=79), a basic regression:
 
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  9.819103  10.147553   0.968    0.336    
+EFYTOTLT     0.008003   0.001790   4.470 2.66e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
----------------------------------------------------------------
-     &nbsp;        Estimate   Std. Error   t value   Pr(>|t|)  
------------------ ---------- ------------ --------- -----------
- **(Intercept)**    9.819       10.15      0.9676     0.3363   
-
-  **EFYTOTLT**     0.008003    0.00179      4.47     2.655e-05 
----------------------------------------------------------------
-
-
--------------------------------------------------------------
- Observations   Residual Std. Error   $R^2$   Adjusted $R^2$ 
--------------- --------------------- ------- ----------------
-      79               64.11          0.206       0.1957     
--------------------------------------------------------------
-Table: Fitting linear model: infections ~ EFYTOTLT
+Residual standard error: 64.11 on 77 degrees of freedom
+Multiple R-squared:  0.206,	Adjusted R-squared:  0.1957 
+F-statistic: 19.98 on 1 and 77 DF,  p-value: 2.655e-05
 
 
 Why might public schools be at a disadvantage at keeping COVID rates lower?
