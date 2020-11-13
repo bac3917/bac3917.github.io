@@ -16,6 +16,25 @@ Then we've got some outliers to consider.  Removing the highest enrollment and h
 
 ![COVIDscatterplot](/img/covidcollegeRemoveOutliers.jpg){: .center-block :}      
 
+Using this trimmed file (n=79), a basic regression:
+
+
+---------------------------------------------------------------
+     &nbsp;        Estimate   Std. Error   t value   Pr(>|t|)  
+----------------- ---------- ------------ --------- -----------
+ **(Intercept)**    9.819       10.15      0.9676     0.3363   
+
+  **EFYTOTLT**     0.008003    0.00179      4.47     2.655e-05 
+---------------------------------------------------------------
+
+
+-------------------------------------------------------------
+ Observations   Residual Std. Error   $R^2$   Adjusted $R^2$ 
+-------------- --------------------- ------- ----------------
+      79               64.11          0.206       0.1957     
+-------------------------------------------------------------
+Table: Fitting linear model: infections ~ EFYTOTLT
+
 
 Why might public schools be at a disadvantage at keeping COVID rates lower?
 
@@ -74,3 +93,29 @@ p2<-ggplot(x, aes(EFYTOTLT,infections,color=SECTOR))+
   ggtitle("Correlation of Campus COVID-19 Cases and \nEnrollment in Pennsylvania by IHE Sector")
 p2
 ```
+
+
+```
+# Remove outliers
+x3<-x %>% filter(EFYTOTLT<30000 & infections<400) # toss these bad boys
+summary(x3$infectionsPerEnroll)
+p3<-ggplot(x3, aes(EFYTOTLT,infections,color=SECTOR))+
+  geom_point(alpha=.4)+geom_smooth(se=FALSE,method="lm")+
+  ylab("Number of COVID19 Infections")+
+  xlab("Full-time Enrollment (EFYTOTLT)")+
+  scale_color_calc()+
+  theme_minimal()+
+  annotate(geom="text",x=33000,y=20, label="NOTE: filtered EFYTOTLT<30000 & infections<400",size=3)+
+  theme(legend.title = element_blank(),
+        axis.title.x =  element_text(size=11))+
+  #  facet_wrap(~SECTOR)+
+  ggtitle(paste0("Correlation of Campus COVID-19 Cases and Enrollment in PA (n=",dim(x3)[1],")"))
+p3
+
+t<-summary(lm(infections~EFYTOTLT,data=x3))
+library(pander)
+pander(t)
+
+```
+
+
