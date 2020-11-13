@@ -5,6 +5,8 @@ bigimg:
 ---
 
 
+![COVIDscatterplot](/img/covidcollege1.jpg){: .center-block :}      
+
 
 ```
 library(RCurl)
