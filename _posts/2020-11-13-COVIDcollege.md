@@ -20,17 +20,13 @@ Then we've got some outliers to consider.  Removing the highest enrollment and h
 
 Using this trimmed file (n=79), let's use a basic regression to see if the relationship is statistically significant:
 
-
-\begin{table}[]
-\begin{tabular}{lllll}
-                 & Estimate  & Std. Error & t value & Pr(\textgreater{}|t|) \\
-(Intercept)      & 12.867842 & 11.093188  & 1.16    & 0.24974               \\
-EFYTOTLT         & 0.006025  & 0.001914   & 3.147   & 0.00237               \\
-SECTOR2          & -24.6687  & 24.185081  & -1.02   & 0.31101               \\
-EFYTOTLT:SECTOR2 & 0.010864  & 0.004501   & 2.414   & 0.01823              
-\end{tabular}
-\end{table}
-
+| Coefficients:    |           |            |         |            |    |
+|------------------|-----------|------------|---------|------------|----|
+|                  | Estimate  | Std. Error | t value | Pr(>\|t\|) |    |
+| (Intercept)      | 12.867842 | 11.093188  | 1.16    | 0.24974    |    |
+| EFYTOTLT         | 0.006025  | 0.001914   | 3.147   | 0.00237    | ** |
+| SECTOR2          | -24.6687  | 24.185081  | -1.02   | 0.31101    |    |
+| EFYTOTLT:SECTOR2 | 0.010864  | 0.004501   | 2.414   | 0.01823    | *  |
 
 Multiple R-squared:  0.2758,	Adjusted R-squared:  0.2468 
 F-statistic: 9.52 on 3 and 75 DF
