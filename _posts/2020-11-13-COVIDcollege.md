@@ -4,6 +4,8 @@ title: COVID and College in the Commonwealth
 bigimg:
 ---
 
+First, wear your mask. OK? With that, the rest of this post is an exploratory analysis to satisfy my curiousity. 
+
 There is a wide range of enrollments and COVID cases in Pennsylvania higher ed.  First, let's look at the count of COVID cases. The plot below shows the institutions with the lowest and highest number of cases. The mean number of infections is 64.5 and the median is 18.00.
 
 ![COVIDbar](/img/p1.jpg){: .center-block :}      
