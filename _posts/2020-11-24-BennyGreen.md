@@ -6,7 +6,7 @@ bigimg:
 
 Time for more #jazzviz.  This time I'm taking a look at pianist Benny Green and a subset of his network.  I define a musician's network as the individuals who are named as performing artists on their published albums. To gather those data, I use the discogs API and various R packages. Note that I do this imperfectly!  I haven't yet mastered lists and `purrr` to clean up my act.  This stands in contrast to Benny Green, who's act is fantastic! Just listen to his albums, or see him live when this pandemic ends.
 
-![BennyGreenNetwork](/img/bennygreennetwork112420.jpg){: .center-block :}      
+![BennyGreenNetwork](/img/bennygreennetwork112420.jpeg){: .center-block :}      
 
 How'd I create this network plot?  Well, see my R code that scrapes discogs below. And if you have improvements to offer, please let me know. I still can't seem to grab all the data I want from discogs (several Benny Green albums aren't referenced in the network plot), so I need to improve my technique.
 
