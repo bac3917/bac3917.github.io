@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Benny Green and #jazzviz
+title: Benny Green and jazzviz
 bigimg:
 ---
 
