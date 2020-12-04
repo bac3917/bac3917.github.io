@@ -23,7 +23,7 @@ I am a long time jazz fan, sketcher, and by day, social scientist.
           </span></a></li>
     </ul>
       <div style="margin-left: 40px;"><strong></strong><strong><u><br>
-          Quantitative Ideas and "Sketches"</u></strong><strong></strong>
+          Quantitative Analysis Ideas and "Sketches"</u></strong><strong></strong>
       <ul style="margin-left: 40px;">
       </ul>
       <ul>
