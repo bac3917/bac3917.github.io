@@ -23,11 +23,10 @@ I am a long time jazz fan, sketcher, and by day, social scientist.
           </span></a></li>
     </ul>
       <div style="margin-left: 40px;"><strong></strong><strong><u><br>
-          Quantitative Analysis</u></strong><strong></strong>
+          Quantitative Ideas and "Sketches"</u></strong><strong></strong>
       <ul style="margin-left: 40px;">
       </ul>
       <ul>
-        <li><a target="_parent" href="https://github.com/bac3917">Github</a></li>
         <li><a target="_blank" href="https://rpubs.com/bac3917"><span style="color: #0000ee;">Rpubs</span></a></li>
       </ul>
       <ul style="margin-left: 40px;">
