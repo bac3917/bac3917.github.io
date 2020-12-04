@@ -39,7 +39,7 @@ fullRelease <- function(rlist){
   message("Total rows=", dim(fullReleaseData[[2]])[1] )    }
 
 # now use the `fullRelease` function!
-albumdata<-fullRelease(rlist[13]) 
+albumdata<-fullRelease(rlist[13]) # this step can be problematic; sometimes get 404 errors depending on accessor value
 
 #save results as csv (improve this process)
 lapply(albumdata[1:length(albumdata)], function(x) write.table( data.frame(x), 
