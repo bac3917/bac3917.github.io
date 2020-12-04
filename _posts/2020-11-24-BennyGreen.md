@@ -4,7 +4,7 @@ title: Benny Green and jazzviz
 bigimg:
 ---
 
-Time for more <a href="https://twitter.com/hashtag/jazzviz?src=hashtag_click">#jazzviz</a>.  This time I'm taking a look at pianist Benny Green and a subset of his network.  I define a musician's network as the individuals who are named as performing artists on their published albums. To gather those data, I use the discogs API and various R packages. Note that I do this imperfectly!  I haven't yet mastered lists and `purrr` to clean up my act.  This stands in contrast to Benny Green, who's act is fantastic! Just listen to his albums, or see him live when this pandemic ends.
+Time for more <a target="_blank" href="https://twitter.com/hashtag/jazzviz?src=hashtag_click">#jazzviz</a>.  This time I'm taking a look at pianist Benny Green and a subset of his network.  I define a musician's network as the individuals who are named as performing artists on their published albums. To gather those data, I use the discogs API and various R packages. Note that I do this imperfectly!  I haven't yet mastered lists and `purrr` to clean up my act.  This stands in contrast to Benny Green, who's act is fantastic! Just listen to his albums, or see him live when this pandemic ends.
 
 ![BennyGreenNetwork](/img/bennygreennetwork112420.jpeg){: .center-block :}      
 
