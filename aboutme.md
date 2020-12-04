@@ -14,6 +14,7 @@ I am a long time jazz fan, sketcher, and by day, social scientist.
     <ul style="margin-left: 40px;">
       <li><a target="_parent" href="http://www.tandfonline.com/doi/abs/10.1080/00220671.2016.1253537">Teaching
           STEM after school: Correlates of instructional comfort</a></li>
+     <li><a target="_parent" href="https://www.researchgate.net/publication/311203922_Growing_Efficacy_and_Collaboration_How_School_Context_Relates_to_Student_Teaching_Outcomes">Growing Efficacy and Collaboration: How School Context Relates to Student Teaching Outcomes</a></li>
       <li><span style="color: #0000ee;"><a target="_parent" href="https://www.center-school.org/research-and-evaluation-group/">Research
             Briefs</a> (various topics)</span></li>
       <li><a target="_parent" href="https://www.researchgate.net/publication/311203741_From_Muscular_Christianity_to_the_Cult_of_Efficiency_Inter-developments_of_Ideology_and_Violence_Reflected_in_the_Portrayal_of_Teachers_in_Three_American_Novels_Draft">
