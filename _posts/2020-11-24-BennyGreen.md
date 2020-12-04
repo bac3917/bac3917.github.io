@@ -40,4 +40,4 @@ lapply(albumdata[1:length(albumdata)], function(x) write.table( data.frame(x),
     append= T, sep=',' ))
 ```
 
-The remainder of my code and data cleaning, and then some `igraph` work to make the network plot.
+The remainder of my code performs some data cleaning, and then applies the <a target="_blank" href="https://igraph.org/r/">igraph</a> package to make the network plot.
