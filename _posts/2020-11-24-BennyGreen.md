@@ -13,15 +13,19 @@ How'd I create this network plot?  Basically, <a target="_blank" href="https://w
 ```
 library(jsonlite)
 library(discogger);library(tidyverse)
+
+# download all releases associated with Benny Green
 dc<-discogs_artist_releases(96442) #Bennygreen
 dc<-dc$content  # Take a look at the main data frame and clean it up
 dc2<-dc %>%   filter(role=="Main" ) %>%  group_by(title) %>% 
   summarise(    release_code=first(main_release),    year=first(year),
     role=first(role),type=first(type),    label=first(label),    in_wantlist_sum=sum(stats.community.in_wantlist) )
-rlist<-as.list(dc2$release_code)  # create a list of releases for subsequent steps
-rlist<-Filter(Negate(anyNA), rlist) # remove NAs from list
-fullReleaseData<-list()  # make a blank list of full release data
+
+rlist<-as.list(dc2$release_code)  # create a list of releases for this artist
+rlist<-Filter(Negate(anyNA), rlist) # remove NAs from this list
+
 # define a function that iteratively downloads release data
+fullReleaseData<-list()  # make a blank list of full release data
 fullRelease <- function(rlist){
   for(i in 1: length(rlist) ){
     frset <- fromJSON(paste0("https://api.discogs.com/releases/", as.character(rlist[i])))
@@ -33,7 +37,10 @@ fullRelease <- function(rlist){
                                                   frset$extraartists$role))    }
   return(fullReleaseData)
   message("Total rows=", dim(fullReleaseData[[2]])[1] )    }
+
+# now use the `fullRelease` function!
 albumdata<-fullRelease(rlist[13]) 
+
 #save results as csv (improve this process)
 lapply(albumdata[1:length(albumdata)], function(x) write.table( data.frame(x), 
     paste0('K:/...path.../jazzalbums_',albumdata[[2]][[4]][1],length(albumdata)-1,'.csv'), 
