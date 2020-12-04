@@ -8,7 +8,7 @@ Time for more <a target="_blank" href="https://twitter.com/hashtag/jazzviz?src=h
 
 ![BennyGreenNetwork](/img/bennygreennetwork112420.jpeg){: .center-block :}      
 
-How'd I create this network plot?  Basically, <a target="_blank" href="www.discogs.com">discogs.com</a> permits you to download their massive music dataset which includes information about every album and all of the personnel on them. It gets a little more complicated, especially when you need to use a tiny bit of combinatorics to make a list of every possible album-personnel interaction. For all the details, see my R code below. And if you have improvements to offer, please let me know. I still can't seem to grab all the data I want from discogs (several Benny Green albums aren't referenced in the network plot), so I need to improve my technique.
+How'd I create this network plot?  Basically, <a target="_blank" href="https://www.discogs.com/">discogs.com</a> permits you to download their massive music dataset which includes information about every album and all of the personnel on them. It gets a little more complicated, especially when you need to use a tiny bit of combinatorics to make a list of every possible album-personnel interaction. For all the details, see my R code below. And if you have improvements to offer, please let me know. I still can't seem to grab all the data I want from discogs (several Benny Green albums aren't referenced in the network plot), so I need to improve my technique.
 
 ```
 library(jsonlite)
