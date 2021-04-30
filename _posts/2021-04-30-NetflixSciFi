@@ -11,7 +11,7 @@ Not sure if Netflix or the Saturn Awards is overlooking the better sci-fi from A
 ```{r}
 rm(list=ls())
 library(lubridate)
-library(dplyr);library(ggplot2);library(readxl);library(scales);
+library(dplyr);library(ggplot2);library(scales);
 library(ggdark);library(stringr)
 
 # Data
