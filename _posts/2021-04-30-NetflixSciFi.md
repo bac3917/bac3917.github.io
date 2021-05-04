@@ -7,9 +7,9 @@ bigimg:
 
 Not sure whether it is Netflix or the Saturn Awards that is overlooking better sci-fi from Asia, but given the number of films created in Asia, I think something has to change!  For instance, one IMDB list includes over 400 sci-fi films from <a href="https://www.imdb.com/search/title/?countries=kr&genres=sci_fi&sort=moviemeter">South Korea</a>. Another Wikipedia list includes 114 sci-fi films from <a href="https://en.wikipedia.org/wiki/Category:Japanese_science_fiction_films">Japan</a>. What are Vietnamese, Chinese, Thai or other Asian film makers creating? How can they be recognized?
 
-Using some recent data archived on Kaggle, and a recent <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-04-20/readme.md">Tidy Tuesday</a> post showing how to utilize it, I plotted a sample of Netflix releases along with information from the Satturn Awards about the films nominated for their quality.  The scatterplot shows that the intersection in Asian countries is not representative.
+Using some recent data archived on Kaggle, and a recent <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-04-20/readme.md">Tidy Tuesday</a> post showing how to utilize it, I plotted a sample of Netflix releases along with information from the Satturn Awards about the films nominated for their quality.  The scatterplot shows that the award/release intersection in Asian countries is not representative.
 
-![netflix_scifi](/img/netflix_scifi.jpeg){: .center-block :}      
+![netflix_scifi](/img/netflix_scifi.jpeg){: .center-block :}  
 
 You can reproduce the graph using the code below, along with <a href="https://raw.githubusercontent.com/bac3917/Cauldron/master/saturnWinners.csv">these data</a> from the Saturn Awards.
 
