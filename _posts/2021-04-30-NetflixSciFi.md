@@ -12,7 +12,7 @@ Using some recent data archived on Kaggle, and a recent <a href="https://github.
 {: .center-block :}
 ![netflix_scifi](/img/netflix_scifi.jpeg)  
 
-You can reproduce the graph using the code below, along with <a href="https://raw.githubusercontent.com/bac3917/Cauldron/master/saturnWinners.csv">these data</a> from the Saturn Awards.
+You can reproduce the graph using the R-code below.
 
 ```{r}
 rm(list=ls())
