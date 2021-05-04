@@ -9,7 +9,7 @@ Not sure whether it is Netflix or the Saturn Awards that is overlooking better s
 
 Using some recent data archived on Kaggle, and a recent <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-04-20/readme.md">Tidy Tuesday</a> post showing how to utilize it, I plotted a sample of Netflix releases along with information from the Satturn Awards about the films nominated for their quality.  The scatterplot shows that the intersection in Asian countries is not representative.
 
-![netflix_scifi](/img/netflix_scifi.jpg){: .center-block :}      
+![netflix_scifi](/img/netflix_scifi.jpeg){: .center-block :}      
 
 You can reproduce the graph using the code below, along with <a href="https://raw.githubusercontent.com/bac3917/Cauldron/master/saturnWinners.csv">these data</a> from the Saturn Awards.
 
