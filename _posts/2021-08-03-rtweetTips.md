@@ -118,7 +118,8 @@ When you choose "Start a Program" in the steps, refer to your batch file.
 
 ## Meta/Longidutinal Analysis
 After a couple weeks, you will have at least two datasets, and can group them for more longitudinal analyses.  
-Make sure you set the `pattern` correctly to refer to your archived files.
+
+Take note of the `list.files` command, and be sure you set the `pattern` correctly to refer to your archived files.
 
 See below for the deets:
 
