@@ -116,6 +116,9 @@ This is pretty straightforward, and I'll leave you with <a href="https://www.dig
 When you choose "Start a Program" in the steps, refer to your batch file.
 
 
+## Meta/Longidutinal Analysis
+After a couple weeks, you will have at least two datasets, and can group them for more longitudinal analyses.  See below for the deets:
+
 ```
 ##### META ANALYSIS ######
 # After you've run the above at least twice, you can group your datasets 
