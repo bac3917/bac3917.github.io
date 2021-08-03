@@ -3,6 +3,17 @@ layout: post
 title: Quick Tips on Automated Twitter Analysis
 ---
 
+
+Some colleagues recently wanted tips on how to automate analysis of one's Twitter data.  Read on for a basic 'how to'!
+
+## Using rtweet to download Twitter data
+The rtweet package is handy, although as free API, it limits a 7-day retrospective view on your activity.  The basic steps to follow are:
+
+1. Create an app in your twitter account
+2. Use the rtweet functions to download various data types
+3. Format your data
+4. Analyze at will!
+
 ```
 # save data and tokens here:
 library(tidyverse);library(dplyr);library(ROAuth);
