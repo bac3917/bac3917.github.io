@@ -117,12 +117,15 @@ When you choose "Start a Program" in the steps, refer to your batch file.
 
 
 ## Meta/Longidutinal Analysis
-After a couple weeks, you will have at least two datasets, and can group them for more longitudinal analyses.  See below for the deets:
+After a couple weeks, you will have at least two datasets, and can group them for more longitudinal analyses.  
+Make sure you set the `pattern` correctly to refer to your archived files.
+
+See below for the deets:
 
 ```
 ##### META ANALYSIS ######
 # After you've run the above at least twice, you can group your datasets 
-myfiles<-list.files("C:/R/batchFiles/TwitterDataArchive",pattern = "CSCfo") # make a list of files
+myfiles<-list.files("C:/R/batchFiles/TwitterDataArchive",pattern = "bac") # make a list of files
 library(plyr)
 setwd("C:/R/batchFiles/TwitterDataArchive")
 dataset <- ldply(myfiles, read.table, header=TRUE, sep=",") # added manually and this checks out
