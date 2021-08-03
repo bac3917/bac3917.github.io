@@ -105,6 +105,7 @@ REM run the R script to download my Twitter data;
 
 ```
 
+What this means is that I made a text file, added the lines you see above, and saved it with a .bat  extension!
 The REM is a command that let's us add comments
 The second line of my batch file  (1) invokes R  and then (2) runs my script
 
