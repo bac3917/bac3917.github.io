@@ -118,7 +118,7 @@ When you choose "Start a Program" in the steps, refer to your batch file.
 
 ```
 ##### META ANALYSIS ######
-# After you've run the above at least twice, you can group your datasets and look at them
+# After you've run the above at least twice, you can group your datasets 
 myfiles<-list.files("C:/R/batchFiles/TwitterDataArchive",pattern = "CSCfo") # make a list of files
 library(plyr)
 setwd("C:/R/batchFiles/TwitterDataArchive")
