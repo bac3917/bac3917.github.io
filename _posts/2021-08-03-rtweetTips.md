@@ -6,7 +6,7 @@ title: Quick Tips on Automated Twitter Analysis
 
 Some colleagues recently wanted tips on how to automate analysis of one's Twitter data.  Read on for a basic 'how to'!
 
-## Using rtweet to download Twitter data
+## Using rtweet to Download Twitter Data
 The rtweet package is handy, although as free API, it limits a 7-day retrospective view on your activity.  The basic steps to follow are:
 
 1. Create an app in your twitter account
@@ -30,21 +30,18 @@ mytoken<-create_token(
 mytoken
 
 ##  https://rtweet.info/   # handy info
+```
 
+Once you're authenticated you can use the variety of rtweet functions....
 
-##  ##  F O L L O W E R S  ##  ## 
-
-## lookup data on those accounts
-myfols <- get_followers("myaccountname")
-
+```
+myfols <- get_followers("myaccountname")   # who follows me?
 
 # if you want this to run automatically, this code/script needs to exist in a folder that Window TaskScheduler uses 
 # later you will make a batch file (.bat) that TaskScheduler uses; I keep all of mine in this folder:
 setwd("C:/R/batchfiles/TwitterDataArchive/")        
 
-
-# what are your followers up do? returns 1000 users
-# of interest are retweets
+# what are your followers up do? returns 1000 users; of interest are retweets
 tu<-lookup_users(myfols$user_id) 
 
 # make a summary table/data frame
@@ -54,14 +51,14 @@ tu<-tu %>% group_by(screen_name) %>%
     is_retweet=first(is_retweet), text=first(text),
     location=first(location)) 
   
-
-# exact seacrch for refs to your screen_name
+# exact search for refs to your screen_name
 bac_refs<-search_tweets("@bac")
 
+
+# make a label for a subset of followers based on the mean followers value `fc`
 fc<-mean(bac_refs$followers_count+0.5*sd(csc_refs$followers_count) )
-# make a label for a subset of followers
 bac_refs$label1<-
-  ifelse(bac_refs$followers_count>fc,
+  ifelse(bac_refs$followers_count > fc,
          paste0("@",bac_refs$screen_name,": ", str_wrap(str_trunc(bac_refs$text, 50),20)),NA)
 
 bac_refs$created_at<-as.Date(bac_refs$created_at)
