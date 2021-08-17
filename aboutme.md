@@ -59,7 +59,7 @@ I am a long time jazz fan, sketcher, and by day, social scientist.
       <strong><u>Further Information</u></strong><br>
       <strong></strong></div>
     <ul style="margin-left: 40px;"> 
-      <li><a target="_blank" href="https://www.linkedin.com/in/benjamin-cohen-04200a7/">LinkedIn</a></li>
+      <li><a target="_blank" href="https://www.linkedin.com/in/benjamin-cohen-ph-d-04200a7/">LinkedIn</a></li>
       <li><a target="_blank" href="https://twitter.com/bac3917"><span style="color: #0000ee;">Twitter</span></a><br></li>
     </ul>
     <div style="margin-left: 40px;"><u><strong>Contact</strong></u>: </div>
