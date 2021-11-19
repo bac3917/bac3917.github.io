@@ -4,7 +4,7 @@ date: "2021-11-19"
 title: Insurrectionists Plotted
 ---
 
-This post documents my plot of arrests associated with the January 6 insurrection at the US Capitol.
+This post documents my plot of arrests associated with the 2021 January 6 <a href="https://en.wikipedia.org/wiki/2021_United_States_Capitol_attack">insurrection</a> at the US Capitol.
 
 What proportion of those arrested have been left to their own recognizance awaiting trial?
 
