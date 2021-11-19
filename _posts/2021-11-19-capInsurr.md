@@ -4,14 +4,17 @@ date: "2021-11-19"
 title: Insurrectionists Plotted
 ---
 
-
 This post documents my plot of arrests associated with the January 6 insurrection at the US Capitol.
 
 What proportion of those arrested have been left to their own recognizance awaiting trial?
+
+{: .center-block :}
 ![insurrection1](/img/insurrectionPlot1.jpg)  
 
 What proportion of those arrested have been sentenced?
-![insurrection1](/img/insurrectionPlot2.jpg)  
+
+{: .center-block :}
+![insurrection2](/img/insurrectionPlot2.jpg)  
 
 
 ```
