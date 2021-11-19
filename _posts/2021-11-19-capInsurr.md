@@ -9,12 +9,12 @@ This post documents my plot of arrests associated with the January 6 insurrectio
 What proportion of those arrested have been left to their own recognizance awaiting trial?
 
 {: .center-block :}
-![insurrection1](/img/insurrectionPlot1.jpg)  
+![insurrection1](/img/insurrectionPlot1.jpeg)  
 
 What proportion of those arrested have been sentenced?
 
 {: .center-block :}
-![insurrection2](/img/insurrectionPlot2.jpg)  
+![insurrection2](/img/insurrectionPlot2.jpeg)  
 
 
 ```
