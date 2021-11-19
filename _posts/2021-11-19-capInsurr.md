@@ -1,5 +1,6 @@
 ---
-date: "2016-12-30T21:49:57-07:00"
+layout: post
+date: "2021-11-19"
 title: Insurrectionists Plotted
 ---
 
