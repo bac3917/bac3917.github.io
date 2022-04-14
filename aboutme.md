@@ -36,7 +36,7 @@ I am a long time jazz fan, sketcher, and by day, social scientist.
       </ul>
       <ul>
         <li><a href="https://photos.app.goo.gl/97e1xmQwnKY2oo1k6"><span style="color: #0000ee;">Furniture</span></a></li>
-        <li><a href="https://www.flickr.com/photos/79749745@N06">A sampling of sketches and photos...</a></li>
+        <li><a href="https://www.instagram.com/sketching.sketcher/">A sampling of sketches and photos...</a></li>
       <li><a href="http://www.brianzeiders.com" target="_blank"> With Brian Zeiders </a>I am a co-founder of <a href="https://www.facebook.com/harrisburgsketchers/"  target="_blank">Harrisburg Sketchers</a></li>  
       </ul>
       <br>
