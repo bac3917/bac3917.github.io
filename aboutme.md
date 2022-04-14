@@ -8,7 +8,6 @@ I am a long time jazz fan, sketcher, and by day, social scientist.
 
 <html>
     <meta content="bac" name="author">
-      <strong> <em>PORTFOLIO OF SORTS</em>!</strong><br>
 
 <div style="margin-left: 40px;"><strong><u>Research and Writing</u></strong><strong></strong></div>
     <ul style="margin-left: 40px;">
