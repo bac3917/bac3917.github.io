@@ -192,6 +192,20 @@ pct1920<-(pct1920[1]/pct1920[2])*100 # pct in 1718 not in 2021
 
 ```
 
+As shopwn in the table below, the percentage of teachers who do not continue from 16-17 to the 2020-21 school year is about 19 percent. Among teachers in 2017-18, about 14 percent are not teaching in 2020-21.
+
+------------------------------
+   Year       % Not Continuing 
+------------- ----------------
+ **pct1617**       19.24 
+
+ **pct1718**       14.25 
+
+ **pct1819**       9.702 
+
+ **pct1920**       5.053 
+------------------------------
+
 
 ```{r, TchrMovementIndicators}
 library(tidyverse);library(expss)
