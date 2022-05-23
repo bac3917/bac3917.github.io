@@ -192,7 +192,7 @@ As shown in the table below, the percentage of teachers who do not continue from
 ------------------------------
 
 
-```{r, TchrMovementIndicators}
+```{r}
 library(tidyverse);library(expss)
 df<-read.csv("paEducStaffRaw_SortedTchrsOnly_Merge.csv")
 
