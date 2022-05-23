@@ -147,7 +147,7 @@ fre(df$year) %>%
 To answer this question, I  queried whether a set of unique teacher IDs in one year appeared in a subsequent year. Specifically, the analysis below creates a set of `PublicID` values for each year and counts the number of teachers in that set is in a subsequent year. In 2016-17, there were just over nnn,000 teachers in the analysis file. How many of them continued in (Pennsylvania) in the second year?
 
 
-```{r TrackUniqueIDs, echo=T}
+```{r}
 # for each year, how many IDs disappear by the following year?
 ID1617<-df %>% dplyr::filter(year=="16_17") %>% pull(PublicID) # create set of IDs for 1617
 ID1718<-df %>% dplyr::filter(year=="17_18") %>% pull(PublicID) # create set of IDs for 1718
