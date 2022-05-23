@@ -1,16 +1,10 @@
 PA Teacher Turnover
 ================
 
-``` r
-library(tidyverse);library(expss)
-source("Z:/GENERAL/R/BC_conveniencefuncs.R")
-```
-
-    ## [1] "Use %strin% function to search for partial matches"
-    ## [1] "Use rstat function to create inline stats"
-    ## [1] "The makenum function converts a list of vectors to numeric"
-    ## [1] "schstat just needs a partial LEA name for input"
-    ## [1] "The ief function recodes 6-point agreement scale"
+-   [Background](#background)
+-   [Methods](#methods)
+-   [Data Munging](#data-munging)
+-   [Analysis](#analysis)
 
 ## Background
 
@@ -56,6 +50,8 @@ The code below does the following:
 2.  Stack each year of data into one file
 3.  Save the file as CSV for analysis
 
+**Read data files** (two examples provided)
+
 ``` r
 t16 <- read.csv("//filesvr01/yourpath/PDE/PubSchoolStaff/2016-17 Professional Personnel Individual Staff Report.csv")
 colnames(t16)<-str_replace_all(colnames(t16)," ","")
@@ -83,44 +79,12 @@ t17$PositionRecode<-ifelse(str_detect(t17$PositionDescription,"Teacher"),"Teache
                                   t17$PositionDescription))
 t17$YearsInED<-t17$YearsInEd
 t17$AUN<-as.character(t17$AUN)
-
-t18 <- read_excel("Z:/yourpath/2018-19 Professional Personnel Individual Staff Report.xlsx")
-colnames(t18)<-str_replace_all(colnames(t18)," ","")
-colnames(t18)<-str_replace_all(colnames(t18),"-","")
-t18$year<-'18_19'
-myvars<-c("AnnualSalary","YearsInED","YearsInLEA")
-t18[myvars]<-makenum(t18,myvars)
-t18$PositionDescription<-t18$PositionDescription2017
-t18$PositionRecode<-ifelse(str_detect(t18$PositionDescription,"Teacher"),"Teacher",
-                           ifelse(str_detect(t18$PositionDescription,"Administ"),"Admin",
-                                  t18$PositionDescription))
-
-t18$AUN<-as.character(t18$AUN)
-
-t19 <- read_excel("Z:/yourpath/2019-20 Professional Personnel Individual Staff Report.xlsx")
-colnames(t19)<-str_replace_all(colnames(t19)," ","")
-colnames(t19)<-str_replace_all(colnames(t19),"-","")
-t19$year<-'19_20'
-myvars<-c("AnnualSalary","YearsInED","YearsInLEA")
-t19[myvars]<-makenum(t19,myvars)  # convert to numeric format
-t19$PositionDescription<-t19$PositionDescription2017
-t19$PositionRecode<-ifelse(str_detect(t19$PositionDescription,"Teacher"),"Teacher",
-                           ifelse(str_detect(t19$PositionDescription,"Administ"),"Admin",
-                                  t19$PositionDescription))
-
-t20 <- read_excel("Z:/yourpath/2020-21 Professional Personnel Individual Staff Report.xlsx")
-colnames(t20)<-str_replace_all(colnames(t20)," ","")
-colnames(t20)<-str_replace_all(colnames(t20),"-","")
-t20$year<-'20_21'
-myvars<-c("AnnualSalary","YearsInED","YearsInLEA")
-t20[myvars]<-makenum(t20,myvars) # convert to numeric format
-t20$PositionDescription<-t20$PositionDescription2017
-t20$PositionRecode<-ifelse(str_detect(t20$PositionDescription,"Teacher"),"Teacher",
-                           ifelse(str_detect(t20$PositionDescription,"Administ"),"Admin",
-                                  t20$PositionDescription))
 ```
 
-Stack annual files into one with selected variables
+ 
+
+**Stack annual files** A subset of variables is included in the stacked,
+multiyear file.
 
 ``` r
 myvars<-c(
@@ -136,8 +100,15 @@ t18a<-t18[myvars];t19a<-t19[myvars];t20a<-t20[myvars]
 # bind most recent years of data
 df<-rbind(t16a,t17a,t18a,t19a,t20a);  rm(t13a,t14a,t15a,t16a,t17a,t18a,t19a,t20a)
 
-df<-df %>% arrange(PublicID,year)  # 20 seconds
+df<-df %>% arrange(PublicID,year)  # sort order is very important
+```
 
+ 
+
+**Create analytic variables** that classify teachers’ movement or
+attrition from an LEA.
+
+``` r
 # clean Job Class
 df$JobClass2<-
   ifelse(df$JobClass=="TPE","Temporary Professional Employee",
@@ -153,10 +124,9 @@ df$YearsInLEA_cat<-ifelse(df$YearsInLEA==1,"One Year in LEA",
                                         "10+ Years")))
 df$YearsInLEA_cat<-factor(df$YearsInLEA_cat,
                           levels=c("One Year in LEA", "2-5 Years","5-10 Years","10+ Years"),ordered = T)
-
-
-write.csv(df,"Z:/yourpath/paEducStaffRaw.csv")
 ```
+
+ 
 
 The `paEducStaffRaw` file was also merged with district characteristics
 data from the National Center for Education Statistics using AUN.
@@ -167,6 +137,12 @@ This preliminary analysis begins with a simple question: *How many
 teachers remain in the staffing file from one year to the next?*
 
 Examine the number of teachers in the analysis file by year:
+
+    ## [1] "Use %strin% function to search for partial matches"
+    ## [1] "Use rstat function to create inline stats"
+    ## [1] "The makenum function converts a list of vectors to numeric"
+    ## [1] "schstat just needs a partial LEA name for input"
+    ## [1] "The ief function recodes 6-point agreement scale"
 
 <table class="gmisc_table" style="border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;">
 <thead>
