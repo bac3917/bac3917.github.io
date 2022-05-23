@@ -1,14 +1,12 @@
 ---
 layout: post
 title: "PA Teacher Turnover"
-output: github_document
+output: 
+  github_document:
+    toc: true
+    toc_depth: 2
 ---
 
-```{r setup,echo=TRUE,message=FALSE}
-library(tidyverse);library(expss)
-source("Z:/GENERAL/R/BC_conveniencefuncs.R")
-
-```
 
 ## Background
 
@@ -36,6 +34,8 @@ The code below does the following:
 3. Save the file as CSV for analysis
 
 ```{r readFiles,eval=FALSE}
+library(tidyverse);library(expss)
+source("Z:/GENERAL/R/BC_conveniencefuncs.R")
 t16 <- read.csv("//filesvr01/yourpath/PDE/PubSchoolStaff/2016-17 Professional Personnel Individual Staff Report.csv")
 colnames(t16)<-str_replace_all(colnames(t16)," ","")
 colnames(t16)<-str_replace_all(colnames(t16),"[:punct:]","")
