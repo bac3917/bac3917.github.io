@@ -232,3 +232,7 @@ df=apply_labels(df,
 
 
 I also created measures of whether an individual teacher moved to another district. Results to be reported subsequently.
+
+[^1]: There are many news items describing teacher supply issues. For example, see <a href="https://www.readingeagle.com/2021/12/27/substitute-teacher-shortage/">McKeel (2021)</a> and <a href="https://www.nbcnews.com/politics/joe-biden/biden-wants-fix-nation-s-teacher-shortage-educators-say-problem-n1269340">Moore (2021)</a>.
+
+[^2]: Often these 'other' assignments are for langauge, arts, technology and physical education teachers.
