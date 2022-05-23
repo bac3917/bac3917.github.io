@@ -140,7 +140,6 @@ df$YearsInLEA_cat<-ifelse(df$YearsInLEA==1,"One Year in LEA",
 df$YearsInLEA_cat<-factor(df$YearsInLEA_cat,
                           levels=c("One Year in LEA", "2-5 Years","5-10 Years","10+ Years"),ordered = T)
 
-
 write.csv(df,"Z:/yourpath/paEducStaffRaw.csv")
 ```
 
@@ -191,7 +190,7 @@ pct1920<-(pct1920[1]/pct1920[2])*100 # pct in 1718 not in 2021
 
 ```
 
-As shopwn in the table below, the percentage of teachers who do not continue from 16-17 to the 2020-21 school year is about 19 percent. Among teachers in 2017-18, about 14 percent are not teaching in 2020-21.
+As shown in the table below, the percentage of teachers who do not continue from 16-17 to the 2020-21 school year is about 19 percent. Among teachers in 2017-18, about 14 percent are not teaching in 2020-21.
 
 ------------------------------
    Year       % Not Continuing 
@@ -203,6 +202,7 @@ As shopwn in the table below, the percentage of teachers who do not continue fro
  **pct1819**       9.702 
 
  **pct1920**       5.053 
+ 
 ------------------------------
 
 
