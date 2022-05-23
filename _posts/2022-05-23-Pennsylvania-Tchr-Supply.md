@@ -25,7 +25,7 @@ Many teachers appear more than once in a given year because both their "Primary"
 ## Data Munging
 The following procedures are used in the R language to manipulate and analyze PDE data:
 
-```{r readFiles}
+```{r readFiles,eval=FALSE}
 t16 <- read.csv("//filesvr01/yourpath/PDE/PubSchoolStaff/2016-17 Professional Personnel Individual Staff Report.csv")
 colnames(t16)<-str_replace_all(colnames(t16)," ","")
 colnames(t16)<-str_replace_all(colnames(t16),"[:punct:]","")
@@ -40,7 +40,6 @@ t16$AUN<-as.character(t16$AUN)
 t16 %>% dplyr::filter(FirstName=="KAREN" & LastName=="KUNSA") %>%
   select(LastName,PublicID)
 
-### 2017-18
 t17 <- read_excel("Z:/yourpath/2017-18 Professional Personnel Individual Staff Report.xlsx")
 colnames(t17)<-str_replace_all(colnames(t17)," ","")
 colnames(t17)<-str_replace_all(colnames(t17),"-","")
@@ -54,7 +53,6 @@ t17$PositionRecode<-ifelse(str_detect(t17$PositionDescription,"Teacher"),"Teache
 t17$YearsInED<-t17$YearsInEd
 t17$AUN<-as.character(t17$AUN)
 
-### 2018-19
 t18 <- read_excel("Z:/yourpath/2018-19 Professional Personnel Individual Staff Report.xlsx")
 colnames(t18)<-str_replace_all(colnames(t18)," ","")
 colnames(t18)<-str_replace_all(colnames(t18),"-","")
@@ -68,7 +66,6 @@ t18$PositionRecode<-ifelse(str_detect(t18$PositionDescription,"Teacher"),"Teache
 
 t18$AUN<-as.character(t18$AUN)
 
-### 2019-20
 t19 <- read_excel("Z:/yourpath/2019-20 Professional Personnel Individual Staff Report.xlsx")
 colnames(t19)<-str_replace_all(colnames(t19)," ","")
 colnames(t19)<-str_replace_all(colnames(t19),"-","")
@@ -80,8 +77,6 @@ t19$PositionRecode<-ifelse(str_detect(t19$PositionDescription,"Teacher"),"Teache
                            ifelse(str_detect(t19$PositionDescription,"Administ"),"Admin",
                                   t19$PositionDescription))
 
-
-### more data
 t20 <- read_excel("Z:/yourpath/2020-21 Professional Personnel Individual Staff Report.xlsx")
 colnames(t20)<-str_replace_all(colnames(t20)," ","")
 colnames(t20)<-str_replace_all(colnames(t20),"-","")
@@ -93,28 +88,18 @@ t20$PositionRecode<-ifelse(str_detect(t20$PositionDescription,"Teacher"),"Teache
                            ifelse(str_detect(t20$PositionDescription,"Administ"),"Admin",
                                   t20$PositionDescription))
 
-# JobClass
-# PE professional employee (tenured)
-# TPE temporary professional employee (not tenured)
-# SP Substitute
-# SC Subcontracted 
-# OE Other employee
-
-
 ```
 
-```{r}
-## Stack Annual Files Into One with Selected Variables
+
+Stack annual files into one with selected variables
+
+```{r, eval=FALSE}
 myvars<-c(
   "year", "FirstName","LastName","PublicID","YearsInED",
   "YearsInLEA","AUN","School",
   "PositionRecode","PrimaryAssignment","Status",  # not on earlier files
   "LEACountyCd", "JobClass"     )
 
-# Primary Assignment is used once per teacher per LEA
-# use to obtain one teacher per LEA
-# t13 and t14 dont appear to have Primary Assignment
-#t13a<-t13[myvars];t14a<-t14[myvars];t15a<-t15[myvars];
 t16a<-t16[myvars];
 t17a<-t17[myvars];
 t18a<-t18[myvars];t19a<-t19[myvars];t20a<-t20[myvars]
@@ -139,6 +124,7 @@ df$YearsInLEA_cat<-ifelse(df$YearsInLEA==1,"One Year in LEA",
                                         "10+ Years")))
 df$YearsInLEA_cat<-factor(df$YearsInLEA_cat,
                           levels=c("One Year in LEA", "2-5 Years","5-10 Years","10+ Years"),ordered = T)
+
 
 write.csv(df,"Z:/yourpath/paEducStaffRaw.csv")
 ```
