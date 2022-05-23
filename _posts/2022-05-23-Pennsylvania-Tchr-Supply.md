@@ -6,10 +6,10 @@ title: "PA Teacher Turnover"
 
 ## Background
 
-Teacher supply is a major issue facing the education system.[^1] This report focuses on teacher supply components in Pennsylvania.
+Teacher supply is a major issue facing the education system.[^1] This report uses a preliminary analysis to report on teacher turnover in Pennsylvania.
 
 ## Methods
-
+This is a preliminary analysis.  Comments and suggestions are welcome and encouraged.
 
 ### Data
 The Pennsylvania Department of Education (PDE) provides public data files that include one records for each teacher, along with information about the LEA, and school the teacher was employed, certification area, etc.  
@@ -23,6 +23,7 @@ Individual teacher records for each of the years 2016-17, 2017-18, 2018-19, 2019
 Many teachers appear more than once in a given year because both their "Primary" and other assignments are included. To ensure that a teacher appears only once per year, the analysis file includes only teachers' primary assignment,[^2] constituting about 80 percent of records. 
 
 ## Data Munging
+The following procedures are used in the R language to manipulate and analyze PDE data:
 
 ```{r readFiles}
 t16 <- read.csv("//filesvr01/yourpath/PDE/PubSchoolStaff/2016-17 Professional Personnel Individual Staff Report.csv")
@@ -102,10 +103,8 @@ t20$PositionRecode<-ifelse(str_detect(t20$PositionDescription,"Teacher"),"Teache
 
 ```
 
-
-## Stack Annual Files Into One with Selected Variables
-
 ```{r}
+## Stack Annual Files Into One with Selected Variables
 myvars<-c(
   "year", "FirstName","LastName","PublicID","YearsInED",
   "YearsInLEA","AUN","School",
