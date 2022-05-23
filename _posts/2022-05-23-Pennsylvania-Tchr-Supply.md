@@ -25,7 +25,7 @@ Many teachers appear more than once in a given year because both their "Primary"
 ## Data Munging
 The following procedures are used in the R language to manipulate and analyze PDE data:
 
-```{r readFiles,eval=FALSE}
+```{r}
 t16 <- read.csv("//filesvr01/yourpath/PDE/PubSchoolStaff/2016-17 Professional Personnel Individual Staff Report.csv")
 colnames(t16)<-str_replace_all(colnames(t16)," ","")
 colnames(t16)<-str_replace_all(colnames(t16),"[:punct:]","")
@@ -93,7 +93,7 @@ t20$PositionRecode<-ifelse(str_detect(t20$PositionDescription,"Teacher"),"Teache
 
 Stack annual files into one with selected variables
 
-```{r, eval=FALSE}
+```{r}
 myvars<-c(
   "year", "FirstName","LastName","PublicID","YearsInED",
   "YearsInLEA","AUN","School",
@@ -127,6 +127,7 @@ df$YearsInLEA_cat<-factor(df$YearsInLEA_cat,
 
 
 write.csv(df,"Z:/yourpath/paEducStaffRaw.csv")
+
 ```
 
 The `paEducStaffRaw` file was also merged with district characteristics data from the National Center for Education Statistics using AUN.
