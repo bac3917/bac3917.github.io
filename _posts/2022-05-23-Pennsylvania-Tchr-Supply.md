@@ -125,7 +125,6 @@ df$YearsInLEA_cat<-ifelse(df$YearsInLEA==1,"One Year in LEA",
 df$YearsInLEA_cat<-factor(df$YearsInLEA_cat,
                           levels=c("One Year in LEA", "2-5 Years","5-10 Years","10+ Years"),ordered = T)
 
-
 write.csv(df,"Z:/yourpath/paEducStaffRaw.csv")
 
 ```
