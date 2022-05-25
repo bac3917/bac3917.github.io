@@ -1,10 +1,7 @@
 ---
 layout: post
 title: "PA Teacher Turnover"
-output: 
-  github_document:
-    toc: true
-    toc_depth: 2
+output: github_document
 ---
 
 
@@ -16,7 +13,7 @@ Teacher supply is a major issue facing the education system.[^1] This report foc
 
 
 ### Data
-The Pennsylvania Department of Education (PDE) provides public data files that include one records for each teacher, along with information about the LEA, and school the teacher was employed, certification area, etc.  
+The Pennsylvania Department of Education (PDE) provides public data files that list teachers in public schools across the state. Because these teachers are provided with a unique identifier, and the data are available across multiple years, it is possible to examine teacher turnover of the Pennsylvania public teacher workforce. 
 
 Data files are available from the PDE on their <a href="https://www.education.pa.gov/DataAndReporting/ProfSupPers/Pages/ProfPersIndStaff.aspx">Data and Reporting page</a>. Documentation for these data are available in PDE's <a href="https://www.education.pa.gov/Documents/Teachers-Administrators/PIMS/PIMS%20Manuals/2021-2022%20PIMS%20Manual%20Vol%201.pdf">PIMS Manual</a>.
 
@@ -25,13 +22,40 @@ In many cases, an individual teacher is included multiple times in the same year
 Individual teacher records for each of the years 2016-17, 2017-18, 2018-19, 2019-20 and 2020-21 were stacked into one data file holding nearly one million records. This file was filtered to include **teachers only**, thus, staff designated as 'Subcontracted,' 'Other Employee,' and 'Substitute' staff were not included in the analysis file. 
 
   
+```{r, echo=F,message=FALSE,warning=FALSE,include=FALSE}
+library(tidyverse);library(expss)
+source("Z:/GENERAL/R/BC_conveniencefuncs.R", verbose = FALSE, print.eval = FALSE)
+df<-read.csv("Z:/GENERAL/Data/PA_Data/PDE/PubSchoolStaff/paEducStaffRaw_SortedTchrsOnly_Merge.csv")
 
-## Data Munging
+# clean Job Class
+
+df$JobClass2<-
+  ifelse(df$JobClass=="TPE","Temporary Professional Employee",
+  ifelse(df$JobClass=="OE","Other Employee",
+  ifelse(df$JobClass=="PE","Professional Employee",
+  ifelse(df$JobClass=="SC","Subcontracted Employee",
+  ifelse(df$JobClass=="",NA,
+  df$JobClass)))))
+
+df$YearsInLEA_cat<-ifelse(df$YearsInLEA==1,"One Year in LEA",
+                          ifelse(df$YearsInLEA<5,"2-5 Years",
+                                 ifelse(df$YearsInLEA<10,"5-10 Years",
+                                        "10+ Years")))
+df$YearsInLEA_cat<-factor(df$YearsInLEA_cat,
+                          levels=c("One Year in LEA", "2-5 Years","5-10 Years","10+ Years"),ordered = T)
+
+```
+
+## Data Preparation
 The code below does the following:
 
 1. Read each year of PDE staffing data and format variables consistently in each year
 2. Stack each year of data into one file
 3. Save the file as CSV for analysis
+
+
+The `paEducStaffRaw` file was also merged with district characteristics data from the National Center for Education Statistics using AUN.
+
 
 **Read data files** (two examples provided)
 ```{r readFiles,eval=FALSE}
@@ -88,110 +112,15 @@ df<-df %>% arrange(PublicID,year)  # sort order is very important
 
 \ 
 
-**Create analytic variables** that classify teachers' movement or attrition from an LEA.
+### Analytic Variables
+The analysis uses variables that classify teachers' movement or attrition from an LEA. I used definitions from the National Center for Education Statistics to create key analytic variables for whether a teacher was a "leaver," a "mover," or a "stayer." Specifically, from the <a href="https://ies.ed.gov/ncee/edlabs/regions/northeast/pdf/REL_2021080.pdf">,report</a> *Analyzing Teacher  Mobility and Retention: Guidance and Considerations Report 1* these definitions are:
 
-```{r, eval=FALSE}
-# clean Job Class
-df$JobClass2<-
-  ifelse(df$JobClass=="TPE","Temporary Professional Employee",
-         ifelse(df$JobClass=="OE","Other Employee",
-                ifelse(df$JobClass=="PE","Professional Employee",
-                       ifelse(df$JobClass=="SC","Subcontracted Employee",
-                              ifelse(df$JobClass=="",NA,
-                                     df$JobClass)))))
++ Leavers. Teachers who left their initial LEA between any two years and did not enter another
+LEA during this timeframe.
++ Movers. Teachers who moved from their initial LEA to a different LEA in any two year period.	The LEA (the LEA a teacher is employed within) that determines whether a teacher is a mover might differ from the one used to determine whether a teacher is a leaver .	For example, a mover might be defined as a teacher who moves between LEAs, whereas a leaver might be defined as a teacher who is no longer teaching in the state. Note that a shortcoming of this analysis is that teachers who move to another state are not accounted for.
++ Stayers. Teachers who remained teaching in their initial LEA in any two year period.	*Further work needed on this variable!*
 
-df$YearsInLEA_cat<-ifelse(df$YearsInLEA==1,"One Year in LEA",
-                          ifelse(df$YearsInLEA<5,"2-5 Years",
-                                 ifelse(df$YearsInLEA<10,"5-10 Years",
-                                        "10+ Years")))
-df$YearsInLEA_cat<-factor(df$YearsInLEA_cat,
-                          levels=c("One Year in LEA", "2-5 Years","5-10 Years","10+ Years"),ordered = T)
-
-```
-
-\ 
-
-The `paEducStaffRaw` file was also merged with district characteristics data from the National Center for Education Statistics using AUN.
-
-
-## Analysis
-This preliminary analysis begins with a simple question: *How many teachers remain in the staffing file from one year to the next?*
-
-Examine the number of teachers in the analysis file by year:
-
-
-```{r,echo=FALSE,message=FALSE,warning=FALSE}
-library(tidyverse);library(expss)
-source("Z:/GENERAL/R/BC_conveniencefuncs.R")
-df<-read.csv("Z:/GENERAL/Data/PA_Data/PDE/PubSchoolStaff/paEducStaffRaw_SortedTchrsOnly_Merge.csv")
-
-fre(df$year) %>% 
-  set_caption(tabtitle("Number of Teachers by Year")) %>% 
-   htmlTable(., css.cell = c("width: 250px", # first column width
-                              rep("width: 50px", ncol(.) - 1)) # other columns width
-    )
-```
-
-To answer this question, I  queried whether a set of unique teacher IDs in one year appeared in a subsequent year. Specifically, the analysis below creates a set of `PublicID` values for each year and counts the number of teachers in that set is in a subsequent year. In 2016-17, there were just over nnn,000 teachers in the analysis file. How many of them continued in (Pennsylvania) in the second year?
-
-
-```{r TrackUniqueIDs, echo=T}
-# for each year, how many IDs disappear by the following year?
-ID1617<-df %>% dplyr::filter(year=="16_17") %>% pull(PublicID) # create set of IDs for 1617
-ID1718<-df %>% dplyr::filter(year=="17_18") %>% pull(PublicID) # create set of IDs for 1718
-ID1819<-df %>% dplyr::filter(year=="18_19") %>% pull(PublicID)
-ID1920<-df %>% dplyr::filter(year=="19_20") %>% pull(PublicID)
-
-y1<-df %>% dplyr::filter(year=="16_17") # Cases for 1617
-y2<-df %>% dplyr::filter(year=="17_18") # Cases for 1718 
-y3<-df %>% dplyr::filter(year=="18_19") 
-y4<-df %>% dplyr::filter(year=="19_20") 
-y5<-df %>% dplyr::filter(year=="20_21") 
-
-# for each year, how many IDs are new?
-#table(ID1617 %in% y2$PublicID) # how many IDs from 1617 in 2017-18?
-#table(ID1617 %in% y3$PublicID) # how many IDs from 1617 in 2018-19?
-#table(ID1617 %in% y4$PublicID) # how many IDs from 1617 in 2019-20?
-
-pct1617<-table(ID1617 %in% y5$PublicID) # how many IDs from 1617 in 2020-21?
-pct1617<-(pct1617[1]/pct1617[2])*100 # pct in 1617 not in 2021
-pct1718<-table(ID1718 %in% y5$PublicID) # how many IDs from 1718 appear in 2020-21?
-pct1718<-(pct1718[1]/pct1718[2])*100 # pct in 1718 not in 2021
-pct1819<-table(ID1819 %in% y5$PublicID) # how many IDs from 1819 in 2020-21?
-pct1819<-(pct1819[1]/pct1819[2])*100 # pct in 1819 not in 2021
-pct1920<-table(ID1920 %in% y5$PublicID) # how many IDs from 1920 in 2020-21?
-pct1920<-(pct1920[1]/pct1920[2])*100 # pct in 1718 not in 2021
-
-t<-rbind(pct1617,pct1718,pct1819,pct1920)
-
-```
-
-------------------------------
-   Year       % Not Continuing 
-------------- ----------------
- **pct1617**       19.24 
-
- **pct1718**       14.25 
-
- **pct1819**       9.702 
-
- **pct1920**       5.053 
-------------------------------
-
-
-
-I also created measures of whether an individual teacher moved to another district. Results to be reported subsequently.
-
-
-```{r, TchrMovementIndicators,echo=FALSE}
-df$sameID_sameNextAUN<-
-  ifelse(df$PublicID==data.table::shift(df$PublicID,n=1,type='lead') &
-           df$AUN==data.table::shift(df$AUN,n=1,type='lead'), "Stayer",
-  ifelse(df$PublicID==data.table::shift(df$PublicID,n=1,type='lead') &
-                  df$AUN!=data.table::shift(df$AUN,n=1,type='lead'), "Mover",
-  ifelse(df$PublicID!=data.table::shift(df$PublicID,n=1,type='lead'),"Different Teacher (NA)",
-         NA )))
-
+```{r}
 df$StayMove_or_NA<-
   ifelse(df$PublicID==data.table::shift(df$PublicID,n=1,type='lead') & #next record must be same teacher
          df$AUN==data.table::shift(df$AUN,n=1,type='lead')  , 'Stayed in LEA',
@@ -215,4 +144,98 @@ df=apply_labels(df,
                  sameLEA2="Employment Status", YearsInLEA_cat="Yrs in LEA",
                 changedLEA="Staff Changed LEA (look behind)", noReturn_paLEA="Staff Did Not Return (look ahead)")
 
+
 ```
+
+\ 
+
+
+
+## Analysis
+This preliminary analysis begins with a simple question: *How many teachers remain in the staffing file from one year to the next?*
+
+The answer to this question is best addressed by first examining the number of teachers in each year of the dataset.
+
+
+```{r,echo=FALSE,message=FALSE,warning=FALSE}
+
+fre(df$year) %>% 
+  set_caption(tabtitle("Number of Teachers by Year")) %>% 
+   htmlTable(., css.cell = c("width: 250px", # first column width
+                              rep("width: 50px", ncol(.) - 1)) # other columns width
+    )
+```
+
+\
+ 
+We can also see the mobility status for all the teachers in the datafile:
+
+```{r,echo=FALSE,message=FALSE,warning=FALSE}
+df$StayMove_or_NA<-factor(df$StayMove_or_NA, levels="Stayed in LEA","Moved LEA","NA: Next Record Diff Tchr",ordered = T)
+
+cro(df$year, df$StayMove_or_NA ) %>% 
+  set_caption(tabtitle("Teachers' Mobility Status by Year")) %>% 
+   htmlTable(., css.cell = c("width: 250px", # first column width
+                              rep("width: 50px", ncol(.) - 1)) # other columns width
+    )
+```
+
+\ 
+
+Next, I  queried whether a set of unique teacher IDs in one year appeared in a subsequent year. Specifically, the analysis below creates a set of `PublicID` values for each year and counts the number of teachers in that set to the values in a subsequent year using the following code:
+
+`ID1617<-df %>% dplyr::filter(year=="16_17") %>% pull(PublicID) # create set of IDs for 1617`
+
+`y2<-df %>% dplyr::filter(year=="17_18") # create the set of cases for 1718 `
+
+`table(ID1617 %in% y2$PublicID) # how many IDs from 1617 in 2017-18?`
+
+
+```{r TrackUniqueIDs, echo=F}
+# for each year, how many IDs disappear by the following year?
+ID1617<-df %>% dplyr::filter(year=="16_17") %>% pull(PublicID) # create set of IDs for 1617
+ID1718<-df %>% dplyr::filter(year=="17_18") %>% pull(PublicID) # create set of IDs for 1718
+ID1819<-df %>% dplyr::filter(year=="18_19") %>% pull(PublicID)
+ID1920<-df %>% dplyr::filter(year=="19_20") %>% pull(PublicID)
+
+y1<-df %>% dplyr::filter(year=="16_17") # Cases for 1617
+y2<-df %>% dplyr::filter(year=="17_18") # Cases for 1718 
+y3<-df %>% dplyr::filter(year=="18_19") 
+y4<-df %>% dplyr::filter(year=="19_20") 
+y5<-df %>% dplyr::filter(year=="20_21") 
+
+# for each year, how many IDs are new?
+#table(ID1617 %in% y2$PublicID) # how many IDs from 1617 in 2017-18?
+#table(ID1617 %in% y3$PublicID) # how many IDs from 1617 in 2018-19?
+#table(ID1617 %in% y4$PublicID) # how many IDs from 1617 in 2019-20?
+
+pct1617<-table(ID1617 %in% y2$PublicID) # how many IDs from 1617 in 2017-18?
+pct1617<-(pct1617[1]/pct1617[2])*100 # pct in 1617 
+pct1718<-table(ID1718 %in% y3$PublicID) # how many IDs from 1718 appear in 2018-19?
+pct1718<-(pct1718[1]/pct1718[2])*100 # pct in 1718 
+pct1819<-table(ID1819 %in% y4$PublicID) # how many IDs from 1819 in 2019-20?
+pct1819<-(pct1819[1]/pct1819[2])*100 # pct in 1819 
+pct1920<-table(ID1920 %in% y5$PublicID) # how many IDs from 1920 in 2020-21?
+pct1920<-(pct1920[1]/pct1920[2])*100 # pct in 1718 
+
+t<-rbind(pct1617,pct1718,pct1819,pct1920)
+
+```
+
+\ 
+
+For example, in 2016-17, there were `r df %>% dplyr::filter(year=="16_17") %>% count()` teachers in the analysis file and about `r pct1617` percent "left" teaching in Pennsylvania by 2017-18.
+
+------------------------------
+   Year       % Not Continuing 
+------------- ----------------
+ **pct1617**       `r pct1617` 
+
+ **pct1718**      `r pct1718`
+
+ **pct1819**       `r pct1819`
+
+ **pct1920**       `r pct1920`
+------------------------------
+
+
