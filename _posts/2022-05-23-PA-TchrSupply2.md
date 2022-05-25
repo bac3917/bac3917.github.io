@@ -342,14 +342,14 @@ datafile:
 <table class="gmisc_table" style="border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;">
 <thead>
 <tr>
-<td colspan="2" style="text-align: left;">
+<td colspan="4" style="text-align: left;">
 Table 2: Teachers’ Mobility Status by Year
 </td>
 </tr>
 <tr>
 <th style="border-top: 2px solid grey;">
 </th>
-<th colspan="1" style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+<th colspan="3" style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
  df$StayMove_or_NA 
 </th>
 </tr>
@@ -357,13 +357,19 @@ Table 2: Teachers’ Mobility Status by Year
 <th style="border-bottom: 1px solid grey; font-weight: 900; width: 250px; text-align: center;">
 </th>
 <th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
+ Stayed in LEA 
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
  Moved LEA 
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
+ NA: Next Record Diff Tchr 
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td colspan="2" style="width: 250px; font-weight: 900;">
+<td colspan="4" style="width: 250px; font-weight: 900;">
  School Year 
 </td>
 </tr>
@@ -374,6 +380,12 @@ Table 2: Teachers’ Mobility Status by Year
 <td style="width: 50px; text-align: right;">
 160454
 </td>
+<td style="width: 50px; text-align: right;">
+4162
+</td>
+<td style="width: 50px; text-align: right;">
+6239
+</td>
 </tr>
 <tr>
 <td style="width: 250px; text-align: left;">
@@ -381,6 +393,12 @@ Table 2: Teachers’ Mobility Status by Year
 </td>
 <td style="width: 50px; text-align: right;">
 159029
+</td>
+<td style="width: 50px; text-align: right;">
+4249
+</td>
+<td style="width: 50px; text-align: right;">
+6125
 </td>
 </tr>
 <tr>
@@ -390,6 +408,12 @@ Table 2: Teachers’ Mobility Status by Year
 <td style="width: 50px; text-align: right;">
 159845
 </td>
+<td style="width: 50px; text-align: right;">
+4349
+</td>
+<td style="width: 50px; text-align: right;">
+6607
+</td>
 </tr>
 <tr>
 <td style="width: 250px; text-align: left;">
@@ -397,6 +421,12 @@ Table 2: Teachers’ Mobility Status by Year
 </td>
 <td style="width: 50px; text-align: right;">
 163401
+</td>
+<td style="width: 50px; text-align: right;">
+3345
+</td>
+<td style="width: 50px; text-align: right;">
+6970
 </td>
 </tr>
 <tr>
@@ -406,6 +436,12 @@ Table 2: Teachers’ Mobility Status by Year
 <td style="width: 50px; text-align: right;">
 29608
 </td>
+<td style="width: 50px; text-align: right;">
+1742
+</td>
+<td style="width: 50px; text-align: right;">
+144930
+</td>
 </tr>
 <tr>
 <td style="width: 250px; border-bottom: 2px solid grey; text-align: left;">
@@ -413,6 +449,12 @@ Table 2: Teachers’ Mobility Status by Year
 </td>
 <td style="width: 50px; border-bottom: 2px solid grey; text-align: right;">
 672337
+</td>
+<td style="width: 50px; border-bottom: 2px solid grey; text-align: right;">
+17847
+</td>
+<td style="width: 50px; border-bottom: 2px solid grey; text-align: right;">
+170871
 </td>
 </tr>
 </tbody>
@@ -434,11 +476,14 @@ that set to the values in a subsequent year using the following code:
  
 
 For example, in 2016-17, there were 170855 teachers in the analysis file
-and about 5.5390146 percent “left” teaching in Pennsylvania by 2017-18.
+and about 5.54 percent “left” teaching in Pennsylvania by 2017-18.
 
 |    Year     | % Not Continuing |
 |:-----------:|------------------|
-| **pct1617** | 5.5390146        |
-| **pct1718** | 5.1252296        |
-| **pct1819** | 5.1730296        |
-| **pct1920** | 5.0525819        |
+| **2016-17** | 5.54             |
+| **2017-18** | 5.13             |
+| **2018-19** | 5.17             |
+| **2019-20** | 5.05             |
+
+Note that the results just above use a different method to calculate the
+percentages and cannot be directly compared to the stayer/mover figures.
