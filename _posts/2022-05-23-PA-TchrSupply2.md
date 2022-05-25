@@ -1,4 +1,5 @@
-PA Teacher Turnover
+type: post
+title: PA Teacher Turnover
 ================
 
 ## Background
