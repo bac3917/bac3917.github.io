@@ -1,6 +1,8 @@
-type: post
+---
+layout: post
+date: May 2022
 title: PA Teacher Turnover
-================
+---
 
 ## Background
 
