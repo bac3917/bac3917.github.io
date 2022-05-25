@@ -1,4 +1,5 @@
-PA Teacher Turnover
+layout: post
+title: "PA Teacher Turnover"
 ================
 
 ## Background
