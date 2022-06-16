@@ -7,7 +7,10 @@ output: github_document
 
 ## Background
 
-Teacher supply is a major issue facing the education system.[^1] This report focuses on teacher supply components in Pennsylvania.
+
+T H I S   A   P R E L I M I N A R Y    D R A F T     
+
+Teacher supply is a major issue facing the education system. This report focuses on teacher supply components in Pennsylvania.
 
 ## Methods
 
@@ -112,6 +115,10 @@ df<-df %>% arrange(PublicID,year)  # sort order is very important
 
 \ 
 
+
+T H I S   A   P R E L I M I N A R Y    D R A F T     
+
+
 ### Analytic Variables
 The analysis uses variables that classify teachers' movement or attrition from an LEA. I used definitions from the National Center for Education Statistics to create key analytic variables for whether a teacher was a "leaver," a "mover," or a "stayer." Specifically, from the <a href="https://ies.ed.gov/ncee/edlabs/regions/northeast/pdf/REL_2021080.pdf">,report</a> *Analyzing Teacher  Mobility and Retention: Guidance and Considerations Report 1* these definitions are:
 
@@ -171,7 +178,7 @@ fre(df$year) %>%
 We can also see the mobility status for all the teachers in the datafile:
 
 ```{r,echo=FALSE,message=FALSE,warning=FALSE}
-df$StayMove_or_NA<-factor(df$StayMove_or_NA, levels="Stayed in LEA","Moved LEA","NA: Next Record Diff Tchr",ordered = T)
+df$StayMove_or_NA<-factor(df$StayMove_or_NA, levels=c("Stayed in LEA","Moved LEA","NA: Next Record Diff Tchr"),ordered = T)
 
 cro(df$year, df$StayMove_or_NA ) %>% 
   set_caption(tabtitle("Teachers' Mobility Status by Year")) %>% 
@@ -224,18 +231,19 @@ t<-rbind(pct1617,pct1718,pct1819,pct1920)
 
 \ 
 
-For example, in 2016-17, there were `r df %>% dplyr::filter(year=="16_17") %>% count()` teachers in the analysis file and about `r pct1617` percent "left" teaching in Pennsylvania by 2017-18.
+For example, in 2016-17, there were `r df %>% dplyr::filter(year=="16_17") %>% count()` teachers in the analysis file and about `r round(pct1617,2)` percent "left" teaching in Pennsylvania by 2017-18.
 
 ------------------------------
    Year       % Not Continuing 
 ------------- ----------------
- **pct1617**       `r pct1617` 
+ **2016-17**       `r round(pct1617,2)` 
 
- **pct1718**      `r pct1718`
+ **2017-18**      `r round(pct1718,2)`
 
- **pct1819**       `r pct1819`
+ **2018-19**       `r round(pct1819,2)`
 
- **pct1920**       `r pct1920`
+ **2019-20**       `r round(pct1920,2)`
 ------------------------------
 
+Note that the results just above use a different method to calculate the percentages and cannot be directly compared to the stayer/mover figures.
 
