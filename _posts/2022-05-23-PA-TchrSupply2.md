@@ -8,7 +8,7 @@ T H I S   A   P R E L I M I N A R Y    D R A F T
 
 ## Background
 
-Teacher supply is a major issue facing the education system.\[^1\] This
+Teacher supply is a major issue facing the education system. [^1] This
 report focuses on teacher supply components in Pennsylvania.
 
 ## Methods
@@ -34,7 +34,7 @@ school district. Positions such as alternative education, computer
 science, art, ESL, and special education staff may teach in separate
 buildings in districts that need to allocate them as such. Only a
 teacher’s ‘primary assignment’ record is included in the analysis file.
-\[^2\]
+[^2]
 
 Individual teacher records for each of the years 2016-17, 2017-18,
 2018-19, 2019-20 and 2020-21 were stacked into one data file holding
@@ -495,3 +495,9 @@ and about 5.54 percent “left” teaching in Pennsylvania by 2017-18.
 
 Note that the results just above use a different method to calculate the
 percentages and cannot be directly compared to the stayer/mover figures.
+
+
+
+[^1]: There are many news items describing teacher supply issues. For example, see <a href="https://www.readingeagle.com/2021/12/27/substitute-teacher-shortage/">McKeel (2021)</a> and <a href="https://www.nbcnews.com/politics/joe-biden/biden-wants-fix-nation-s-teacher-shortage-educators-say-problem-n1269340">Moore (2021)</a>.
+
+[^2]: Often these 'other' assignments are for langauge, arts, technology and physical education teachers.
