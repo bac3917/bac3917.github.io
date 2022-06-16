@@ -2,6 +2,10 @@ layout: post
 title: "PA Teacher Turnover"
 ================
 
+
+T H I S   A   P R E L I M I N A R Y    D R A F T     
+
+
 ## Background
 
 Teacher supply is a major issue facing the education system.\[^1\] This
@@ -462,6 +466,9 @@ Table 2: Teachers’ Mobility Status by Year
 </table>
 
  
+
+T H I S   A   P R E L I M I N A R Y    D R A F T     
+
 
 Next, I queried whether a set of unique teacher IDs in one year appeared
 in a subsequent year. Specifically, the analysis below creates a set of
