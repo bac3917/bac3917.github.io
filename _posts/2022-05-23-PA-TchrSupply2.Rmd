@@ -247,3 +247,8 @@ For example, in 2016-17, there were `r df %>% dplyr::filter(year=="16_17") %>% c
 
 Note that the results just above use a different method to calculate the percentages and cannot be directly compared to the stayer/mover figures.
 
+
+
+[^1]: There are many news items describing teacher supply issues. For example, see <a href="https://www.readingeagle.com/2021/12/27/substitute-teacher-shortage/">McKeel (2021)</a> and <a href="https://www.nbcnews.com/politics/joe-biden/biden-wants-fix-nation-s-teacher-shortage-educators-say-problem-n1269340">Moore (2021)</a>.
+
+[^2]: Often these 'other' assignments are for langauge, arts, technology and physical education teachers.
