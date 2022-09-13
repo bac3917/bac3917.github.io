@@ -7,7 +7,7 @@ title: "PA Teacher Turnover"
 ## Background
 
 
-T H I S   A   P R E L I M I N A R Y    D R A F T     
+T H I S      A       P R E L I M I N A R Y         D R A F T     
 
 Teacher supply is a major issue facing the education system. This report focuses on teacher supply components in Pennsylvania.
 
