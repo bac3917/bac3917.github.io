@@ -79,8 +79,8 @@ education to describe the communities in which the programs work? Gosh, that mak
 The `tidycensus` package enables you to grab ACS or Decennial Census
 data and download it directly to R. In this example, I grabbed
 tract-level population data, and the number of individuals under 18
-years of age in poverty, and then calculated a percentage. You can see
-the distribution of the percentages in the histogram below.
+years of age in poverty, and then calculated a percentage. Note that you can easily specify a very large dataset, so making your search query limited. You can see
+the distribution of the percentages in the histogram below. 
 
 More info on the tidycensus package
 <a href="https://walker-data.com/tidycensus/articles/basic-usage.html">is
