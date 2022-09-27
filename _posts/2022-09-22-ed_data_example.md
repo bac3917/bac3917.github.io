@@ -42,9 +42,7 @@ output:
   <script src= "https://rstudio.github.io/leaflet/libs/leaflet-binding/leaflet.js"></script>
 
 
-This document presents a very basic example you can access to Census and
-other data. and use them to provide context for local evaluation data.
-Specifically, this tutorial uses the R programming language, and
+This document presents a very basic example of automating the digestion of Census, US Department of Education and GIS data, and then using it to provide context for local evaluation data. Specifically, this tutorial uses the R programming language, and
 includes examples and the R code you need (click the “Code” buttons
 below) to get you started.
 
@@ -70,8 +68,7 @@ df
     ## 3  Cheating Luddites        388       90 41.1731 -76.0157
 
 Above, we can see that one of the groups, the “Cheating Luddites” have
-the highest percentage of training goals completed (and we have some
-location data too).
+the highest percentage of training goals completed. We have also the locations of these three sites.
 
 Let’s imagine the evaluation team wants to put their sites into greater
 community context. So, why not use information about poverty and
