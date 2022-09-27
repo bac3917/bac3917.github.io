@@ -67,12 +67,12 @@ df
     ## 2 Better Accountants        411       80 40.9300 -76.0150
     ## 3  Cheating Luddites        388       90 41.1731 -76.0157
 
-Above, we can see that one of the groups, the “Cheating Luddites” have
+Above, we can see that one of the groups, the “Cheating Luddites,” have
 the highest percentage of training goals completed. We have also the locations of these three sites.
 
 Let’s imagine the evaluation team wants to put their sites into greater
 community context. So, why not use information about poverty and
-education? Gosh, that makes so much sense!
+education to describe the communities in which the programs work? Gosh, that makes so much sense!
 
 ## Get Poverty Data
 
