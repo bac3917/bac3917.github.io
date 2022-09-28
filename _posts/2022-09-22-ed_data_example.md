@@ -103,7 +103,7 @@ Now let’s plot these data!
 hist(pa_tracts2$pctU18,main="Distribution of Poverty Among Minors in Pennsylvania Tracts")
 ```
 
-![](ed_data_example_files/figure-gfm/plot1-1.png)<!-- -->
+![](img/plot1-1.png)<!-- -->
 
  
 
@@ -241,4 +241,4 @@ m<-leaflet(df) %>%
 m
 ```
 
-![](ed_data_example_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+![](img/unnamed-chunk-5-1.png)<!-- -->
