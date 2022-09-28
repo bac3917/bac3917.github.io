@@ -6,6 +6,8 @@ always_allow_html: yes
 last_modified_at: 2021-05-30
 output: 
   md_document:
+    self_contained: no
+    maps: true   
     variant: gfm
     preserve_yaml: true
 ---
