@@ -5,6 +5,18 @@ subtitle: analysis and creativity swirled
 use-site-title: true
 ---
 
+<script src="libs/jquery/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap/css/flatly.min.css" rel="stylesheet" />
+<script src="libs/bootstrap/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap/shim/respond.min.js"></script>
+<script src="libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="libs/leaflet/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet/leaflet.js"></script>
+<link href="libs/leafletfix/leafletfix.css" rel="stylesheet" />
+<script src="libs/leaflet-binding/leaflet.js"></script>
+
 <div class="posts-list">
   {% for post in paginator.posts %}
   <article class="post-preview">
@@ -55,6 +67,7 @@ use-site-title: true
    </article>
   {% endfor %}
 </div>
+
 
 {% if paginator.total_pages > 1 %}
 <ul class="pager main-pager">
