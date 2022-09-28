@@ -11,26 +11,7 @@ output:
 ---
 
 <head>
-  <!--code-->
-  
-  <script src="libs/jquery/jquery.min.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="libs/bootstrap/css/flatly.min.css" rel="stylesheet" />
-  <script src="libs/bootstrap/js/bootstrap.min.js"></script>
-  <script src="libs/bootstrap/shim/html5shiv.min.js"></script>
-  
-  ...
-  <!--more libraries-->
-  ...
-  
-  <link href="libs/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
-  <script src="libs/leaflet-binding/leaflet.js"></script>
-  
-  <!--code-->
-</head>
-
-
-  <script src="https://rstudio.github.io/leaflet/libs/jquery/jquery.min.js"></script>
+<script src="https://rstudio.github.io/leaflet/libs/jquery/jquery.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://rstudio.github.io/leaflet/libs/bootstrap/css/flatly.min.css" rel="stylesheet" />
   
@@ -40,10 +21,14 @@ output:
   
   <link     href="https://rstudio.github.io/leaflet/libs/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
   <script src= "https://rstudio.github.io/leaflet/libs/leaflet-binding/leaflet.js"></script>
-
-
-This document presents a very basic example of automating the digestion of Census, US Department of Education and GIS data, and then using it to provide context for local evaluation data. Specifically, this tutorial uses the R programming language, and
-includes examples and the R code you need to get you started.
+  
+  </head>
+  
+This document presents a very basic example you can access to Census and
+other data. and use them to provide context for local evaluation data.
+Specifically, this tutorial uses the R programming language, and
+includes examples and the R code you need (click the “Code” buttons
+below) to get you started.
 
 So, let’s start with some sites – fictional in this case! We might have
 three groups that receive training in ethics. We will make some bogus
@@ -66,20 +51,21 @@ df
     ## 2 Better Accountants        411       80 40.9300 -76.0150
     ## 3  Cheating Luddites        388       90 41.1731 -76.0157
 
-Above, we can see that one of the groups, the “Cheating Luddites,” have
-the highest percentage of training goals completed. We have also the locations of these three sites.
+Above, we can see that one of the groups, the “Cheating Luddites” have
+the highest percentage of training goals completed (and we have some
+location data too).
 
 Let’s imagine the evaluation team wants to put their sites into greater
 community context. So, why not use information about poverty and
-education to describe the communities in which the programs work? Gosh, that makes so much sense!
+education? Gosh, that makes so much sense!
 
 ## Get Poverty Data
 
 The `tidycensus` package enables you to grab ACS or Decennial Census
 data and download it directly to R. In this example, I grabbed
 tract-level population data, and the number of individuals under 18
-years of age in poverty, and then calculated a percentage. Note that you can easily specify a very large dataset, so making your search query limited. You can see
-the distribution of the percentages in the histogram below. 
+years of age in poverty, and then calculated a percentage. You can see
+the distribution of the percentages in the histogram below.
 
 More info on the tidycensus package
 <a href="https://walker-data.com/tidycensus/articles/basic-usage.html">is
@@ -115,7 +101,7 @@ Now let’s plot these data!
 hist(pa_tracts2$pctU18,main="Distribution of Poverty Among Minors in Pennsylvania Tracts")
 ```
 
-![](ed_data_example_files/figure-markdown_github/plot1-1.png)
+![](ed_data_example_files/figure-gfm/plot1-1.png)<!-- -->
 
  
 
@@ -153,12 +139,14 @@ table(pa$grade)
 ```
 
     ## 
-    ##           Pre-K    Kindergarten               1               2               3               4               5               6 
-    ##               0              20              20              20              20              20              20              20 
-    ##               7               8               9              10              11              12              13 Adult education 
-    ##              12              12              16              16              16              16               0               0 
-    ##        Ungraded           Total   Not specified 
-    ##               0              40               0
+    ##           Pre-K    Kindergarten               1               2               3 
+    ##               0              20              20              20              20 
+    ##               4               5               6               7               8 
+    ##              20              20              20              12              12 
+    ##               9              10              11              12              13 
+    ##              16              16              16              16               0 
+    ## Adult education        Ungraded           Total   Not specified 
+    ##               0               0              40               0
 
 The very messy output shows there are 20 first grade records, 16 ninth
 grade records, etc… There are also 40 records that provide a “total”
@@ -221,26 +209,22 @@ different features (e.g. schools, crime, rainfall). Many shapefiles are
 available from the Census Bureau. The following steps (1) download the
 shapefiles, (2) merge our contextual data to them, and (3) create a map.
 
-<!--html_preserve-->
-<div id="htmlwidget-7ab57412f7b1df4d5773" style="width:100%;height:216px;" class="leaflet html-widget"></div>
-  <script type="application/json"data-for="htmlwidget-7ab57412f7b1df4d5773">
-  ...
-  
-
 ``` r
 library(tigris);library(leaflet)
 
 pa_t<-tigris::tracts(                   # this command says you want a tract shapefile
   state = 'PA',county = "079",  # download Luzerne County and assign it as `pa_t`
-  progress_bar=FALSE)
+  progress_bar=TRUE)
+```
 
+``` r
 pa_t2<-merge(pa_t,pa_tracts2,by='GEOID')  # merge datasets using a common variable
 
 pa_c<-tigris::counties(state = 'PA',progress_bar=FALSE)  # download PA counties
 
 palTract<-colorNumeric(palette = 'Blues',domain = pa_t2$pctU18)  # make a set of colors that align with the map
 
-leaflet(df) %>% 
+m<-leaflet(df) %>% 
     addProviderTiles("CartoDB.Positron") %>%    # background tiles
     addPolygons(data=pa_c,fillColor = 'yellow',fillOpacity = .2, weight=.4) %>%    # counties
   addPolygons(    # Census tracts
@@ -251,6 +235,8 @@ leaflet(df) %>%
         ) %>%
     addCircleMarkers(weight=.5,radius=5,fillColor='black',fillOpacity = 1, label=df$SiteName) %>%
     setView(-76,41.2,zoom=9)
+    
+m
 ```
 
-![](ed_data_example_files/figure-markdown_github/unnamed-chunk-5-1.png)
+![](ed_data_example_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
