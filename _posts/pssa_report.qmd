@@ -1,0 +1,61 @@
+---
+title: "cs fails"
+format: html
+editor: visual
+---
+
+```{r}
+library(tidyverse)
+df<-read.csv("Z:/GENERAL/Data/PA_Data/PDE/pssa/pssa_multiyear.csv")
+df<-janitor::clean_names(df)
+df$lea_type<-ifelse(str_detect(df$school," CS"),"CS","Reg")
+
+
+# how many times is each CS in data?
+df<-df %>% 
+#  filter(lea_type=="CS") %>%
+  group_by(aun) %>%
+  mutate(numyears_included=n()) %>% ungroup()
+
+```
+
+# Top level, aggregated view...
+
+```{r}
+df %>% 
+  #filter(datayear=="2023-24") %>%
+  group_by(lea_type,datayear) %>%
+  summarise(ela_pro_adv=mean(ela_pro_adv)) %>%
+  filter(lea_type!="NA") %>%
+  ggplot(aes(datayear,ela_pro_adv,group = lea_type,color=lea_type)) +
+  geom_line(size=1)+ylab("% Proficient or Advance on ELA Assessment")+
+  scale_color_calc()+
+  labs(subtitle = "Charter schools consistently underperform regular schools...")+
+  theme_minimal()
+
+
+```
+
+ 
+
+# School by school.....
+
+```{r}
+df %>% 
+  group_by(aun,lea_type,datayear) %>%
+  summarise(ela_pro_adv=mean(ela_pro_adv,na.rm=T),
+            math_pro_adv=mean(math_pro_adv,na.rm=T),
+            n=n()) %>%
+  filter(lea_type!="NA" & n >=1) %>%
+  ggplot(aes(datayear,math_pro_adv,group = aun,color=lea_type)) +
+  geom_line(size=.6,alpha=.4)+ylab("% Proficient or Advance on ELA Assessment")+
+#  geom_smooth(se=FALSE)+
+  EnvStats::stat_n_text(size=3)+
+  scale_color_calc()+
+  labs(subtitle = "Charter schools consistently underperform regular schools...")+
+  theme_minimal()+
+  theme(axis.text.x=element_text(angle=77,margin = margin(t=40)))+
+  facet_wrap(~lea_type)
+
+
+```
