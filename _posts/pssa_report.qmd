@@ -1,6 +1,6 @@
 ---
-title: "cs fails"
-format: html
+title: "Charter school performance"
+layout: post
 editor: visual
 ---
 
