@@ -63,7 +63,7 @@ I am a long time jazz fan, sketcher, and by day, social scientist.
       <li><a target="_blank" href="https://twitter.com/bac3917"><span style="color: #0000ee;">Twitter</span></a><br></li>
     </ul>
     <div style="margin-left: 40px;"><u><strong>Contact</strong></u>: </div>
-    <li style="margin-left: 80px;"><a href="mailto:bac3917@gmail.com">bac3917@gmail.com</a></li>
+    <li style="margin-left: 80px;"><a href="mailto:bac3917 gmail.com">bac3917 _a_t_ gmail</a></li>
     
   </body>
 </html>
