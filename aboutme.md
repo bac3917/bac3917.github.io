@@ -47,23 +47,6 @@ I am a long time jazz fan, sketcher, and by day, social scientist.
       <li><a target="_parent" href="https://bac3917.github.io/hbgsketchers/index.html"><span style="color: #0000ee;">Harrisburg Sketchers</span></a></li>
       <li><a target="_parent" href="www.urbansketchers.org"><span style="color: #0000ee;">Urban Sketchers</span></a></li>
     </ul>
-
-<div style="margin-left: 40px;"> <strong></strong><strong><u>Travels</u></strong><strong></strong>
-      <ul style="margin-left: 40px;">
-        <li>Europe</li>
-        <li>Central America</li>
-        <li><a href="https://goo.gl/photos/ZXbhfH1W4n3ut6S79">South America</a></li>
-        <li><a href="https://goo.gl/photos/wjERHd6JTnowndi56">India</a></li>
-      </ul>
-      <br>
-      <strong><u>Further Information</u></strong><br>
-      <strong></strong></div>
-    <ul style="margin-left: 40px;"> 
-      <li><a target="_blank" href="https://www.linkedin.com/in/benjamin-cohen-ph-d-04200a7/">LinkedIn</a></li>
-      <li><a target="_blank" href="https://twitter.com/bac3917"><span style="color: #0000ee;">Twitter</span></a><br></li>
-    </ul>
-    <div style="margin-left: 40px;"><u><strong>Contact</strong></u>: </div>
-    <li style="margin-left: 80px;"><a href="mailto:bac3917 gmail.com">bac3917 _a_t_ gmail</a></li>
     
   </body>
 </html>
